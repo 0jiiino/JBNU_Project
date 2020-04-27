@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">큰사람 길라잡이</string>
     <string name="title_activity_login">로그인</string>
+    <string name="title_map">교내 편의 시설 위치 정보</string>
     <string name="prompt_email">E-mail</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
