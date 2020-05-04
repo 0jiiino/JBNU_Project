@@ -11,7 +11,6 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 
-import com.jbnu.project1.ui.login.LoginActivity;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //벨트 체크리스트 클릭시 활성화
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(intent);
             }
         });
