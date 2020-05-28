@@ -117,12 +117,14 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback, Activi
     @Override
     public void onMapReady(final GoogleMap googleMap)
     {
+
+
         Log.d(TAG, "onMapReady :");
 
         mMap = googleMap;
 
         //런타임 퍼미션 요청 대화상자나 GPS 활성 요청 대화상자 보이기전에
-        //지도의 초기위치를 서울로 이동
+        //지도의 초기위치를 전북대학교로 이동
         setDefaultLocation();
 
         //런타임 퍼미션 처리
@@ -328,23 +330,107 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback, Activi
 
     public void setCurrentLocation(Location location, String markerTitle, String markerSnippet) {
 
-
         if (currentMarker != null) currentMarker.remove();
 
-
-        LatLng currentLatLng = new LatLng(location.getLatitude(), location.getLongitude());
-
+        LatLng Library = new LatLng(35.848561, 127.131932);
         MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(currentLatLng);
-        markerOptions.title(markerTitle);
-        markerOptions.snippet(markerSnippet);
+        markerOptions.position(Library);
+        markerOptions.title("중앙도서관");
+        markerOptions.snippet("1층, 4층");
         markerOptions.draggable(true);
-
-
+        //CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate);
         currentMarker = mMap.addMarker(markerOptions);
 
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(currentLatLng);
-        mMap.moveCamera(cameraUpdate);
+        LatLng a1 = new LatLng(35.846844, 127.132551);
+        MarkerOptions markerOptions1 = new MarkerOptions();
+        markerOptions1.position(a1);
+        markerOptions1.title("공과대학 1호관");
+        markerOptions1.snippet("복사집");
+        markerOptions1.draggable(true);
+        //CameraUpdate cameraUpdate1 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate1);
+        currentMarker = mMap.addMarker(markerOptions1);
+
+        LatLng a2 = new LatLng(35.843219, 127.133082);
+        MarkerOptions markerOptions2 = new MarkerOptions();
+        markerOptions2.position(a2);
+        markerOptions2.title("인문대 1호관");
+        markerOptions2.snippet("1층");
+        markerOptions2.draggable(true);
+        //CameraUpdate cameraUpdate2 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate2);
+        currentMarker = mMap.addMarker(markerOptions2);
+
+        LatLng a3 = new LatLng(35.844730, 127.133859);
+        MarkerOptions markerOptions3 = new MarkerOptions();
+        markerOptions3.position(a3);
+        markerOptions3.title("상대 1호관");
+        markerOptions3.snippet("1층");
+        markerOptions3.draggable(true);
+        //CameraUpdate cameraUpdate3 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate3);
+        currentMarker = mMap.addMarker(markerOptions3);
+
+        LatLng a4 = new LatLng(35.844794, 127.135297);
+        MarkerOptions markerOptions4 = new MarkerOptions();
+        markerOptions4.position(a4);
+        markerOptions4.title("상대 2호관");
+        markerOptions4.snippet("1층");
+        markerOptions4.draggable(true);
+        //CameraUpdate cameraUpdate4 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate4);
+        currentMarker = mMap.addMarker(markerOptions4);
+
+        LatLng a5 = new LatLng(35.845824, 127.128157);
+        MarkerOptions markerOptions5 = new MarkerOptions();
+        markerOptions5.position(a5);
+        markerOptions5.title("상대 2호관");
+        markerOptions5.snippet("1층");
+        markerOptions5.draggable(true);
+        //CameraUpdate cameraUpdate5 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate5);
+        currentMarker = mMap.addMarker(markerOptions5);
+
+        LatLng a6 = new LatLng(35.845680, 127.133184);
+        MarkerOptions markerOptions6 = new MarkerOptions();
+        markerOptions6.position(a6);
+        markerOptions6.title("학습 도서관");
+        markerOptions6.snippet("1층");
+        markerOptions6.draggable(true);
+        //CameraUpdate cameraUpdate6 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate6);
+        currentMarker = mMap.addMarker(markerOptions6);
+
+        LatLng a7 = new LatLng(35.847752, 127.143497);
+        MarkerOptions markerOptions7 = new MarkerOptions();
+        markerOptions7.position(a7);
+        markerOptions7.title("의학 도서관");
+        markerOptions7.snippet("1층");
+        markerOptions7.draggable(true);
+        //CameraUpdate cameraUpdate7 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate7);
+        currentMarker = mMap.addMarker(markerOptions7);
+
+        LatLng a8 = new LatLng(35.844102, 127.133763);
+        MarkerOptions markerOptions8 = new MarkerOptions();
+        markerOptions8.position(a8);
+        markerOptions8.title("사회과학대");
+        markerOptions8.snippet("1층");
+        markerOptions8.draggable(true);
+        //CameraUpdate cameraUpdate8 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate8);
+        currentMarker = mMap.addMarker(markerOptions8);
+
+        LatLng a9 = new LatLng(35.842641, 127.132017);
+        MarkerOptions markerOptions9 = new MarkerOptions();
+        markerOptions9.position(a9);
+        markerOptions9.title("사범대 본관");
+        markerOptions9.snippet("1층");
+        markerOptions9.draggable(true);
+        //CameraUpdate cameraUpdate9 = CameraUpdateFactory.newLatLng(Library);
+        //mMap.moveCamera(cameraUpdate9);
+        currentMarker = mMap.addMarker(markerOptions9);
 
     }
 
@@ -513,6 +599,9 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback, Activi
                 break;
         }
     }
+
+
+
 
 
 

@@ -43,5 +43,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button notice = (Button)findViewById(R.id.notice);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //편의 시설 위치 클릭시 활성화
+                Intent intent = new Intent(getApplicationContext(), notice.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
