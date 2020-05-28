@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BeltActivity">
+
+    <Button
+        android:id="@+id/btn_white"
+        android:layout_width="212dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="200dp"
+        android:text="WHITE BELT(1학년)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_yellow"
+        android:layout_width="212dp"
+        android:layout_height="77dp"
+        android:text="YELLOW BELT(2학년)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_white" />
+
+    <Button
+        android:id="@+id/btn_blue"
+        android:layout_width="212dp"
+        android:layout_height="77dp"
+        android:text="BLUE BELT(3학년)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_yellow" />
+
+    <Button
+        android:id="@+id/btn_red"
+        android:layout_width="212dp"
+        android:layout_height="77dp"
+        android:text="RED BELT(4학년)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_blue" />
+</androidx.constraintlayout.widget.ConstraintLayout>
