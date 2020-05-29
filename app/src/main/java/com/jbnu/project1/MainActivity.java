@@ -3,17 +3,9 @@ package com.jbnu.project1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
-
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,11 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button belt = (Button)findViewById(R.id.belt);
-        belt.setOnClickListener(new View.OnClickListener() {
+        Button tip = (Button)findViewById(R.id.tip);
+        tip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //벨트 체크리스트 클릭시 활성화
+                //꿀팁 게시판 클릭시 활성화
                 Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(intent);
             }
@@ -39,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //편의 시설 위치 클릭시 활성화
                 Intent intent = new Intent(getApplicationContext(), Map.class);
+                startActivity(intent);
+            }
+        });
+        Button Belt = (Button)findViewById(R.id.belt);
+        Belt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //벨트 클릭시 활성화
+                Intent intent = new Intent(getApplicationContext(), BeltActivity.class);
                 startActivity(intent);
             }
         });
