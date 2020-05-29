@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".SearchBook"></activity>
+        <activity android:name=".BookList" />
+        <activity android:name=".RedBelt" />
+        <activity android:name=".BlueBelt" />
+        <activity android:name=".YellowBelt" />
+        <activity android:name=".WhiteBelt" />
         <activity android:name=".BeltActivity" />
 
         <meta-data
