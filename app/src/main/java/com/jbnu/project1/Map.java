@@ -167,7 +167,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback, Activi
                         PERMISSIONS_REQUEST_CODE);
             }
 
-                        }
+        }
 
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
