@@ -173,7 +173,7 @@ public class WhiteBelt extends AppCompatActivity {
     public void popup1(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("인성검사").setMessage("행복드림센터 방문검사-검사 후 행복드림센터에서 포인트 입력");
+        builder.setTitle("인성검사").setMessage("행복드림센터 방문검사\n검사 후 행복드림센터에서 포인트 입력");
 
         AlertDialog alertDialog = builder.create();
 
