@@ -10,6 +10,7 @@
         android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:gravity="center"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:orientation="horizontal"
@@ -50,6 +51,7 @@
         android:id="@+id/ll2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:gravity="center"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:orientation="horizontal"
@@ -63,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="인성/적성검사(택1)" />
+            android:text="인성 / 적성검사 (택 1)" />
 
         <EditText
             android:id="@+id/editText02"
@@ -98,6 +100,7 @@
         android:id="@+id/ll3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:gravity="center"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:orientation="horizontal"

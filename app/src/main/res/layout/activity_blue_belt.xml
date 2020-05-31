@@ -24,14 +24,15 @@
             android:gravity="center"
             android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.\n이동버튼 터치시 관련 링크로 이동합니다."
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/ll1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -71,6 +72,7 @@
             android:id="@+id/ll2"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -84,7 +86,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="기업탐방/현장실습 택 1" />
+                android:text="기업탐방 / 현장실습 택 1" />
 
             <EditText
                 android:id="@+id/editText02"
@@ -110,6 +112,7 @@
             android:id="@+id/ll3"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -228,6 +231,7 @@
             android:id="@+id/ll7"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -267,6 +271,7 @@
             android:id="@+id/ll8"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -306,6 +311,7 @@
             android:id="@+id/ll9"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -319,7 +325,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="셀프면접/면접기초교육 택 1" />
+                android:text="셀프면접 / 면접기초교육 택 1" />
 
             <EditText
                 android:id="@+id/editText09"
@@ -345,6 +351,7 @@
             android:id="@+id/ll11"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -384,6 +391,7 @@
             android:id="@+id/ll12"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -416,6 +424,7 @@
             android:id="@+id/ll13"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -448,6 +457,7 @@
             android:id="@+id/ll14"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -480,6 +490,7 @@
             android:id="@+id/ll15"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -512,6 +523,7 @@
             android:id="@+id/ll16"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -544,6 +556,7 @@
             android:id="@+id/ll17"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
@@ -576,6 +589,7 @@
             android:id="@+id/ll18"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:orientation="horizontal"
