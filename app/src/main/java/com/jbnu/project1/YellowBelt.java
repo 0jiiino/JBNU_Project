@@ -81,7 +81,7 @@ public class YellowBelt extends AppCompatActivity {
                 if (edit1.getText().toString().equals("") || edit2.getText().toString().equals("") ||
                         edit3.getText().toString().equals("") || edit4.getText().toString().equals("")
                         || edit6.getText().toString().equals("")) {
-                    Toast.makeText(YellowBelt.this, "값이 없습니다.",
+                    Toast.makeText(YellowBelt.this, "빈칸에 0 입력해주세요",
                             Toast.LENGTH_LONG).show();
                 } else {
                     String s1 = edit1.getText().toString();
@@ -175,7 +175,7 @@ public class YellowBelt extends AppCompatActivity {
     public void popup02(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("직무검사").setMessage("오아시스-진로적성검사 예약-상담후 취업지원과에서 포인트 입력[인터넷검사시 결과지 오아시스로 신청");
+        builder.setTitle("직무검사").setMessage("오아시스-진로적성검사 예약-상담후 취업지원과에서 포인트 입력[인터넷검사시 결과지 오아시스로 신청]");
 
         AlertDialog alertDialog = builder.create();
 
@@ -192,7 +192,7 @@ public class YellowBelt extends AppCompatActivity {
     public void popup01(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("진로계획서").setMessage("오아시스-큰사람프로젝트 관리-진로계획서 작성-검사후 검사결과 다운(큰사람 프로젝트 관리에서 파일 첨부하여 포인트 신청");
+        builder.setTitle("진로계획서").setMessage("오아시스-큰사람프로젝트 관리-진로계획서 작성-검사후 검사결과 다운(큰사람 프로젝트 관리에서 파일 첨부하여 포인트 신청)");
 
         AlertDialog alertDialog = builder.create();
 

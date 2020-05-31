@@ -80,7 +80,7 @@ public class WhiteBelt extends AppCompatActivity {
 
                 if (edit1.getText().toString().equals("") || edit2.getText().toString().equals("") ||
                         edit3.getText().toString().equals("") || edit4.getText().toString().equals("")) {
-                    Toast.makeText(WhiteBelt.this, "값이 없습니다.",
+                    Toast.makeText(WhiteBelt.this, "빈칸에 0 입력해주세요",
                             Toast.LENGTH_LONG).show();
                 } else {
                     String s1 = edit1.getText().toString();
