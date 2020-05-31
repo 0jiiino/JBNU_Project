@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/button04"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
         android:text="책 리스트"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
 
     <Button
         android:id="@+id/button03"
-        android:layout_width="50dp"
+        android:layout_width="70dp"
         android:layout_height="40dp"
         android:onClick="popup03"
         android:text="이동"
@@ -97,7 +97,7 @@
 
     <Button
         android:id="@+id/button02"
-        android:layout_width="50dp"
+        android:layout_width="70dp"
         android:layout_height="40dp"
         android:onClick="popup02"
         android:text="이동"
@@ -122,7 +122,7 @@
 
     <Button
         android:id="@+id/button01"
-        android:layout_width="50dp"
+        android:layout_width="70dp"
         android:layout_height="40dp"
         android:onClick="popup01"
         android:text="이동"
@@ -230,7 +230,7 @@
 
     <Button
         android:id="@+id/plus"
-        android:layout_width="62dp"
+        android:layout_width="70dp"
         android:layout_height="40dp"
         android:text="계산"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -269,7 +269,7 @@
 
     <Button
         android:id="@+id/button05"
-        android:layout_width="50dp"
+        android:layout_width="70dp"
         android:layout_height="40dp"
         android:onClick="popup05"
         android:text="이동"
@@ -296,10 +296,10 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="282dp"
+        android:layout_width="320dp"
         android:layout_height="49dp"
         android:layout_marginTop="60dp"
-        android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.이동버튼 터치시 관련 링크로 이동합니다."
+        android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.\n이동버튼 터치시 관련 링크로 이동합니다."
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
