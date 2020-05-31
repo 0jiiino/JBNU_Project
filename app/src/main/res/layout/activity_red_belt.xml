@@ -1,9 +1,594 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RedBelt">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/mainlinear"
+        android:layout_width="6700dp"
+        android:layout_height="65dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+    <TextView
+            android:id="@+id/textView8"
+            android:layout_width="243dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.이동버튼 터치시 관련 링크로 이동합니다."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+        <CheckBox
+            android:id="@+id/checkbox01"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="취업계획서" />
+
+        <EditText
+            android:id="@+id/editText01"
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <Button
+            android:id="@+id/button01"
+            android:layout_width="0dp"
+            android:layout_weight="15"
+            android:layout_height="wrap_content"
+            android:onClick="popup01"
+            android:text="이동" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll1">
+
+        <CheckBox
+            android:id="@+id/checkbox02"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="취업지원과 상담1회" />
+
+        <EditText
+            android:id="@+id/editText02"
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <Button
+            android:id="@+id/button02"
+            android:layout_width="0dp"
+            android:layout_weight="15"
+            android:layout_height="wrap_content"
+            android:onClick="popup02"
+            android:text="이동" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll2">
+
+        <CheckBox
+            android:id="@+id/checkbox03"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="외국어 lv5이상" />
+
+        <EditText
+            android:id="@+id/editText03"
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <Button
+            android:id="@+id/button03"
+            android:layout_width="0dp"
+            android:layout_weight="15"
+            android:layout_height="wrap_content"
+            android:onClick="popup03"
+            android:text="이동" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll45"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll3">
+
+            <LinearLayout
+                android:id="@+id/ll4"
+                android:layout_width="95dp"
+                android:layout_height="97dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.101"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll3">
+
+                <CheckBox
+                    android:id="@+id/checkbox04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="교양1권" />
+
+                <CheckBox
+                    android:id="@+id/checkbox05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="교양2권" />
+
+                <CheckBox
+                    android:id="@+id/checkbox06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="자율1권" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll5"
+                android:layout_width="240dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/ll4">
+
+                <EditText
+                    android:id="@+id/editText04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:ems="10"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <Button
+                    android:id="@+id/button04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:text="책리스트" />
+
+                <Button
+                    android:id="@+id/button06"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:text="책검색" />
+            </LinearLayout>
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll7"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll45">
+
+        <CheckBox
+            android:id="@+id/checkbox08"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="기업탐방/현장실습 택1" />
+
+        <EditText
+            android:id="@+id/editText07"
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <Button
+            android:id="@+id/button07"
+            android:layout_width="0dp"
+            android:layout_weight="15"
+            android:layout_height="wrap_content"
+            android:onClick="popup07"
+            android:text="이동" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll8"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll7">
+
+        <CheckBox
+            android:id="@+id/checkbox09"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="입사지원서 클리닉1회" />
+
+        <EditText
+            android:id="@+id/editText08"
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <Button
+            android:id="@+id/button08"
+            android:layout_width="0dp"
+            android:layout_weight="15"
+            android:layout_height="wrap_content"
+            android:onClick="popup08"
+            android:text="이동" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll9"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll8">
+
+        <CheckBox
+            android:id="@+id/checkbox10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="기업인적성검사 교육1회" />
+
+        <EditText
+            android:id="@+id/editText09"
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <Button
+            android:id="@+id/button09"
+            android:layout_width="0dp"
+            android:layout_weight="15"
+            android:layout_height="wrap_content"
+            android:onClick="popup09"
+            android:text="이동" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll11"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll9">
+
+        <CheckBox
+            android:id="@+id/checkbox07"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="면접심화교육/면접캠프 택1" />
+
+        <EditText
+            android:id="@+id/editText06"
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <Button
+            android:id="@+id/button05"
+            android:layout_width="0dp"
+            android:layout_weight="15"
+            android:layout_height="wrap_content"
+            android:onClick="popup05"
+            android:text="이동" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll12"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll11">
+
+        <CheckBox
+            android:id="@+id/checkbox20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:text="직무심화교육" />
+
+        <EditText
+            android:id="@+id/editText20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll13"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll12">
+
+        <CheckBox
+            android:id="@+id/checkbox21"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:text="기업의 달인되기" />
+
+        <EditText
+            android:id="@+id/editText21"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll14"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll13">
+
+        <CheckBox
+            android:id="@+id/checkbox22"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:text="졸업생멘토링" />
+
+        <EditText
+            android:id="@+id/editText22"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll15"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll14">
+
+        <CheckBox
+            android:id="@+id/checkbox23"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:text="채용설명회" />
+
+        <EditText
+            android:id="@+id/editText23"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll16"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll15">
+
+        <CheckBox
+            android:id="@+id/checkbox24"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:text="채용박람회" />
+
+        <EditText
+            android:id="@+id/editText24"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll17"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll16">
+
+        <CheckBox
+            android:id="@+id/checkbox25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:text="전공자격증" />
+
+        <EditText
+            android:id="@+id/editText25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll18"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <CheckBox
+            android:id="@+id/checkbox26"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:text="취업교과목" />
+
+        <EditText
+            android:id="@+id/editText26"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:ems="10"
+            android:hint="포인트"
+            android:inputType="number"
+            android:maxLength="2" />
+
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll10"
+            android:layout_width="225dp"
+            android:layout_height="49dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.451"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_weight="30"
+                android:layout_height="wrap_content"
+                android:text="총포인트" />
+
+            <EditText
+                android:id="@+id/editText05"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:ems="10"
+                android:hint="합500"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/plus"
+                android:layout_width="0dp"
+                android:layout_weight="30"
+                android:layout_height="wrap_content"
+                android:text="계산" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
