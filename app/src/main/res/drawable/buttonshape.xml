@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <corners
-        android:radius="80dp"
+        android:radius="60dp"
         />
     <solid
         android:color="#00ff0000"
         />
     <padding
-        android:left="0dp"
-        android:top="0dp"
+        android:left="36dp"
+        android:top="13dp"
         android:right="0dp"
         android:bottom="0dp"
         />
     <size
-        android:width="212dp"
-        android:height="77dp"
+        android:width="230dp"
+        android:height="67dp"
         />
+    <stroke
+        android:color="#A588DA"
+        android:width="4dp"
+        android:dashWidth="10dp"
+        android:dashGap="10dp"/>
 
 </shape>

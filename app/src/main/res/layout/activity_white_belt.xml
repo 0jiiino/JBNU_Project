@@ -22,8 +22,10 @@
         <CheckBox
             android:id="@+id/checkbox01"
             android:layout_width="0dp"
+            android:buttonTint="#673AB7"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:fontFamily="@font/neodgm"
             android:text="대학생활계획서" />
 
         <EditText
@@ -33,6 +35,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
+            android:fontFamily="@font/neodgm"
             android:hint="포인트"
             android:inputType="number"
             android:maxLength="2" />
@@ -41,6 +44,7 @@
             android:id="@+id/button01"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/neodgm"
             android:layout_weight="1"
             android:onClick="popup"
             android:text="이동" />
@@ -64,6 +68,8 @@
             android:id="@+id/checkbox02"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/neodgm"
+            android:buttonTint="#673AB7"
             android:layout_weight="2"
             android:text="인성 / 적성검사 (택 1)" />
 
@@ -74,6 +80,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
+            android:fontFamily="@font/neodgm"
             android:hint="포인트"
             android:inputType="number"
             android:maxLength="2" />
@@ -83,6 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
+            android:fontFamily="@font/neodgm"
             android:onClick="popup1"
             android:text="인성" />
 
@@ -91,6 +99,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
+            android:fontFamily="@font/neodgm"
             android:onClick="popup3"
             android:text="적성" />
 
@@ -113,7 +122,9 @@
             android:id="@+id/checkbox03"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:buttonTint="#673AB7"
             android:layout_weight="2"
+            android:fontFamily="@font/neodgm"
             android:text="외국어 Lv1 이상" />
 
         <EditText
@@ -121,6 +132,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:ems="10"
             android:hint="포인트"
@@ -131,6 +143,7 @@
             android:id="@+id/button03"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/neodgm"
             android:layout_weight="1"
             android:onClick="popup2"
             android:text="이동" />
@@ -156,6 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:fontFamily="@font/neodgm"
             android:text="총 포인트" />
 
         <EditText
@@ -165,6 +179,7 @@
             android:layout_weight="2"
             android:ems="10"
             android:gravity="center"
+            android:fontFamily="@font/neodgm"
             android:hint="합 200"
             android:inputType="number" />
 
@@ -173,6 +188,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/neodgm"
             android:text="계산" />
     </LinearLayout>
 
@@ -203,6 +219,8 @@
             <CheckBox
                 android:id="@+id/checkbox04"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/neodgm"
+                android:buttonTint="#673AB7"
                 android:layout_height="wrap_content"
                 android:text="교양 1권" />
 
@@ -210,11 +228,15 @@
                 android:id="@+id/checkbox05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="#673AB7"
+                android:fontFamily="@font/neodgm"
                 android:text="교양 2권" />
 
             <CheckBox
                 android:id="@+id/checkbox06"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/neodgm"
+                android:buttonTint="#673AB7"
                 android:layout_height="wrap_content"
                 android:text="자율 1권" />
 
@@ -227,6 +249,7 @@
             android:layout_weight="0.8"
             android:layout_gravity="center"
             android:ems="10"
+            android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:hint="포인트"
             android:inputType="number"
@@ -242,6 +265,7 @@
                 android:id="@+id/search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/neodgm"
                 android:layout_weight="1"
                 android:text="책 검색" />
 
@@ -249,6 +273,7 @@
                 android:id="@+id/button04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/neodgm"
                 android:layout_weight="1"
                 android:text="책 리스트" />
 
