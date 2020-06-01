@@ -1,25 +1,20 @@
 package com.jbnu.project1;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -27,7 +22,6 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -36,573 +30,243 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.material.snackbar.Snackbar;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-//import androidx.appcompat.app.AppCompatActivity;
-//import android.os.Bundle;
+public class Map extends AppCompatActivity implements OnMapReadyCallback {
+    private static String TAG = Map.class.getSimpleName();
 
-//import com.google.android.gms.maps.CameraUpdateFactory;
-//import com.google.android.gms.maps.GoogleMap;
-//import com.google.android.gms.maps.OnMapReadyCallback;
-//import com.google.android.gms.maps.SupportMapFragment;
-//import com.google.android.gms.maps.model.LatLng;
-//import com.google.android.gms.maps.model.MarkerOptions;
+    private GoogleMap googleMap;                        // 구글 map
+    private Marker currentMarker;                       // 현재 나의 위치 marker
 
-public class Map extends AppCompatActivity implements OnMapReadyCallback, ActivityCompat.OnRequestPermissionsResultCallback{
-
-    private GoogleMap mMap;
-    private Marker currentMarker = null;
-
-    private static final String TAG = "googlemap_example";
-    private static final int GPS_ENABLE_REQUEST_CODE = 2001;
-    private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
-    private static final int FASTEST_UPDATE_INTERVAL_MS = 500; // 0.5초
-
-    // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
-    private static final int PERMISSIONS_REQUEST_CODE = 100;
-    boolean needRequest = false;
-
-
-    // 앱을 실행하기 위해 필요한 퍼미션을 정의합니다.
-    String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};  // 외부 저장소
-
-
-    Location mCurrentLocatiion;
-    LatLng currentPosition;
-
-
-    private FusedLocationProviderClient mFusedLocationClient;
+    // 현위치를 받아오기 위해 사용되는 객체
+    private FusedLocationProviderClient fusedLocationClient;
+    // 위치 업데이트에 대한 서비스 품질을 요청하는 데 사용
     private LocationRequest locationRequest;
-    private Location location;
 
+    // 편의시설 array list
+    private ArrayList<Facility> facilities;
 
-    private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
-    // (참고로 Toast에서는 Context가 필요했습니다.)
+    private static final int REQUEST_CODE_LOCATION_ENABLE = 100;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
-                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
         setContentView(R.layout.activity_map);
 
-        mLayout = findViewById(R.id.layout_map);
+        // 화면 켜진 상태 유지하기
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        locationRequest = new LocationRequest()
-                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                .setInterval(UPDATE_INTERVAL_MS)
-                .setFastestInterval(FASTEST_UPDATE_INTERVAL_MS);
+        setTitle("교내 편의 시설 위치 정보");
 
+        // 현위치 정보 얻데이트 성능 설정
+        this.locationRequest = new LocationRequest()
+                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
-        LocationSettingsRequest.Builder builder =
-                new LocationSettingsRequest.Builder();
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder();
+        builder.addLocationRequest(this.locationRequest);
 
-        builder.addLocationRequest(locationRequest);
+        this.fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-
-
-        SupportMapFragment mapFragment = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.mapping);
+        // 구글 지도 표시
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapping);
         mapFragment.getMapAsync(this);
+
+        // 편의시설 객체 만들기
+        createFacility();
     }
-
-    //GoogleMap 객체를 파라미터로 제공해 줄 수 있을 때 호출되어지는 메소드
-    @Override
-    public void onMapReady(final GoogleMap googleMap)
-    {
-
-
-        Log.d(TAG, "onMapReady :");
-
-        mMap = googleMap;
-
-        //런타임 퍼미션 요청 대화상자나 GPS 활성 요청 대화상자 보이기전에
-        //지도의 초기위치를 전북대학교로 이동
-        setDefaultLocation();
-
-        //런타임 퍼미션 처리
-        // 1. 위치 퍼미션을 가지고 있는지 체크합니다.
-        int hasFineLocationPermission = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION);
-        int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION);
-
-        if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED &&
-                hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED   ) {
-
-            // 2. 이미 퍼미션을 가지고 있다면
-            // ( 안드로이드 6.0 이하 버전은 런타임 퍼미션이 필요없기 때문에 이미 허용된 걸로 인식합니다.)
-            startLocationUpdates(); // 3. 위치 업데이트 시작
-
-
-        }else {  //2. 퍼미션 요청을 허용한 적이 없다면 퍼미션 요청이 필요합니다. 2가지 경우(3-1, 4-1)가 있습니다.
-
-            // 3-1. 사용자가 퍼미션 거부를 한 적이 있는 경우에는
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, REQUIRED_PERMISSIONS[0])) {
-
-                // 3-2. 요청을 진행하기 전에 사용자가에게 퍼미션이 필요한 이유를 설명해줄 필요가 있습니다.
-                Snackbar.make(mLayout, "이 앱을 실행하려면 위치 접근 권한이 필요합니다.",
-                        Snackbar.LENGTH_INDEFINITE).setAction("확인", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        // 3-3. 사용자게에 퍼미션 요청을 합니다. 요청 결과는 onRequestPermissionResult에서 수신됩니다.
-                        ActivityCompat.requestPermissions( Map.this, REQUIRED_PERMISSIONS,
-                                PERMISSIONS_REQUEST_CODE);
-                    }
-                }).show();
-
-
-            } else {
-                // 4-1. 사용자가 퍼미션 거부를 한 적이 없는 경우에는 퍼미션 요청을 바로 합니다.
-                // 요청 결과는 onRequestPermissionResult에서 수신됩니다.
-                ActivityCompat.requestPermissions( this, REQUIRED_PERMISSIONS,
-                        PERMISSIONS_REQUEST_CODE);
-            }
-
-        }
-
-        mMap.getUiSettings().setMyLocationButtonEnabled(true);
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
-        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-
-            @Override
-            public void onMapClick(LatLng latLng) {
-
-                Log.d( TAG, "onMapClick :");
-            }
-        });
-    }
-
-    LocationCallback locationCallback = new LocationCallback() {
-        @Override
-        public void onLocationResult(LocationResult locationResult) {
-            super.onLocationResult(locationResult);
-
-            List<Location> locationList = locationResult.getLocations();
-
-            if (locationList.size() > 0) {
-                location = locationList.get(locationList.size() - 1);
-                //location = locationList.get(0);
-
-                currentPosition
-                        = new LatLng(location.getLatitude(), location.getLongitude());
-
-
-                String markerTitle = getCurrentAddress(currentPosition);
-                String markerSnippet = "위도:" + String.valueOf(location.getLatitude())
-                        + " 경도:" + String.valueOf(location.getLongitude());
-
-                Log.d(TAG, "onLocationResult : " + markerSnippet);
-
-
-                //현재 위치에 마커 생성하고 이동
-                setCurrentLocation(location, markerTitle, markerSnippet);
-
-                mCurrentLocatiion = location;
-            }
-
-
-        }
-
-    };
-
-    private void startLocationUpdates() {
-
-        if (!checkLocationServicesStatus()) {
-
-            Log.d(TAG, "startLocationUpdates : call showDialogForLocationServiceSetting");
-            showDialogForLocationServiceSetting();
-        }else {
-
-            int hasFineLocationPermission = ContextCompat.checkSelfPermission(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION);
-            int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(this,
-                    Manifest.permission.ACCESS_COARSE_LOCATION);
-
-
-
-            if (hasFineLocationPermission != PackageManager.PERMISSION_GRANTED ||
-                    hasCoarseLocationPermission != PackageManager.PERMISSION_GRANTED   ) {
-
-                Log.d(TAG, "startLocationUpdates : 퍼미션 안가지고 있음");
-                return;
-            }
-
-
-            Log.d(TAG, "startLocationUpdates : call mFusedLocationClient.requestLocationUpdates");
-
-            mFusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
-
-            if (checkPermission())
-                mMap.setMyLocationEnabled(true);
-
-        }
-
-    }
-
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        Log.d(TAG, "onStart");
+        // 현위치 정보 받아오기 위한 설정
+        this.fusedLocationClient.requestLocationUpdates(this.locationRequest, mLocationCallback, null);
 
-        if (checkPermission()) {
-
-            Log.d(TAG, "onStart : call mFusedLocationClient.requestLocationUpdates");
-            mFusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null);
-
-            if (mMap!=null)
-                mMap.setMyLocationEnabled(true);
-
+        if (this.googleMap != null) {
+            // 지도에 현재위치 표시 true
+            this.googleMap.setMyLocationEnabled(true);
         }
-
-
     }
-
 
     @Override
     protected void onStop() {
-
         super.onStop();
 
-        if (mFusedLocationClient != null) {
-
-            Log.d(TAG, "onStop : call stopLocationUpdates");
-            mFusedLocationClient.removeLocationUpdates(locationCallback);
+        if (this.fusedLocationClient != null) {
+            // 위치정보 받아오는 callback 제거
+            this.fusedLocationClient.removeLocationUpdates(mLocationCallback);
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-
-
-    public String getCurrentAddress(LatLng latlng) {
-
-        //지오코더... GPS를 주소로 변환
-        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-
-        List<Address> addresses;
-
-        try {
-
-            addresses = geocoder.getFromLocation(
-                    latlng.latitude,
-                    latlng.longitude,
-                    1);
-        } catch (IOException ioException) {
-            //네트워크 문제
-            Toast.makeText(this, "지오코더 서비스 사용불가", Toast.LENGTH_LONG).show();
-            return "지오코더 서비스 사용불가";
-        } catch (IllegalArgumentException illegalArgumentException) {
-            Toast.makeText(this, "잘못된 GPS 좌표", Toast.LENGTH_LONG).show();
-            return "잘못된 GPS 좌표";
-
+        if (resultCode == Activity.RESULT_OK) {
+            switch (requestCode) {
+                case REQUEST_CODE_LOCATION_ENABLE:
+                    // 사용자가 위치정보 활성 시켰는지 검사
+                    if (checkLocationServicesStatus()) {
+                        Log.d(TAG, "onActivityResult : 위치정보 활성화 되있음");
+                        return;
+                    }
+                    break;
+            }
         }
-
-
-        if (addresses == null || addresses.size() == 0) {
-            Toast.makeText(this, "주소 미발견", Toast.LENGTH_LONG).show();
-            return "주소 미발견";
-
-        } else {
-            Address address = addresses.get(0);
-            return address.getAddressLine(0).toString();
-        }
-
     }
 
+    @Override
+    public void onMapReady(final GoogleMap googleMap) {
+        this.googleMap = googleMap;
 
-    public boolean checkLocationServicesStatus() {
+        // 최초 위치 표시 (디폴트 전북대)
+        setMyLocation(35.846950, 127.129399);
+
+        // 위치정보 업데이트 시작
+        startLocationUpdates();
+
+        // 편의시설 마크 표시
+        for (Facility facility : this.facilities) {
+            LatLng latLng = new LatLng(facility.latitude, facility.longitude);
+            // 마크 생성
+            createMarker(latLng, facility.title, facility.snippet, BitmapDescriptorFactory.HUE_ROSE);
+        }
+
+        this.googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(16));
+    }
+
+    /* 편의시설 객체 만들기 */
+    private void createFacility() {
+        this.facilities = new ArrayList<>();
+
+        this.facilities.add(new Facility("중앙도서관", "1층, 4층", 35.848561, 127.131932));
+        this.facilities.add(new Facility("공과대학 1호관", "복사집", 35.846844, 127.132551));
+        this.facilities.add(new Facility("인문대 1호관", "1층", 35.843219, 127.133082));
+        this.facilities.add(new Facility("상대 1호관", "1층", 35.844730, 127.133859));
+        this.facilities.add(new Facility("상대 2호관", "1층", 35.844794, 127.135297));
+        this.facilities.add(new Facility("제 1학생회관", "1층", 35.845824, 127.128157));
+        this.facilities.add(new Facility("학습도서관", "1층", 35.845680, 127.133184));
+        this.facilities.add(new Facility("의학 도서관", "1층", 35.847752, 127.143497));
+        this.facilities.add(new Facility("사회과학대", "1층", 35.844102, 127.133763));
+        this.facilities.add(new Facility("사범대 본관", "1층", 35.842641, 127.132017));
+    }
+
+    /* 위치정보 업데이트 시작 */
+    private void startLocationUpdates() {
+        // 위치정보 사용 여부 상태 체크
+        if (checkLocationServicesStatus()) {
+            // 현재 위치 정보 받아오기 위한 설정
+            this.fusedLocationClient.requestLocationUpdates(locationRequest, mLocationCallback, Looper.myLooper());
+            this.googleMap.setMyLocationEnabled(true);
+        }else {
+            // 위치정보 활성화 하기
+            showDialogForLocationServiceSetting();
+        }
+    }
+
+    /* 위치정보 사용여부 체크 */
+    private boolean checkLocationServicesStatus() {
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
 
+    /* 나의 위치 표시 */
+    private void setMyLocation(double latitude, double longitude) {
+        if (this.currentMarker != null) {
+            this.currentMarker.remove();
+        }
 
-    public void setCurrentLocation(Location location, String markerTitle, String markerSnippet) {
+        LatLng latLng = new LatLng(latitude, longitude);
 
-        if (currentMarker != null) currentMarker.remove();
+        // 마커 생성
+        this.currentMarker = createMarker(latLng, "나", "", BitmapDescriptorFactory.HUE_CYAN);
+        // 마크 타이틀 항상 표시
+        this.currentMarker.showInfoWindow();
 
-        LatLng Library = new LatLng(35.848561, 127.131932);
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(Library);
-        markerOptions.title("중앙도서관");
-        markerOptions.snippet("1층, 4층");
-        markerOptions.draggable(true);
-        //CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate);
-        currentMarker = mMap.addMarker(markerOptions);
-
-        LatLng a1 = new LatLng(35.846844, 127.132551);
-        MarkerOptions markerOptions1 = new MarkerOptions();
-        markerOptions1.position(a1);
-        markerOptions1.title("공과대학 1호관");
-        markerOptions1.snippet("복사집");
-        markerOptions1.draggable(true);
-        //CameraUpdate cameraUpdate1 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate1);
-        currentMarker = mMap.addMarker(markerOptions1);
-
-        LatLng a2 = new LatLng(35.843219, 127.133082);
-        MarkerOptions markerOptions2 = new MarkerOptions();
-        markerOptions2.position(a2);
-        markerOptions2.title("인문대 1호관");
-        markerOptions2.snippet("1층");
-        markerOptions2.draggable(true);
-        //CameraUpdate cameraUpdate2 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate2);
-        currentMarker = mMap.addMarker(markerOptions2);
-
-        LatLng a3 = new LatLng(35.844730, 127.133859);
-        MarkerOptions markerOptions3 = new MarkerOptions();
-        markerOptions3.position(a3);
-        markerOptions3.title("상대 1호관");
-        markerOptions3.snippet("1층");
-        markerOptions3.draggable(true);
-        //CameraUpdate cameraUpdate3 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate3);
-        currentMarker = mMap.addMarker(markerOptions3);
-
-        LatLng a4 = new LatLng(35.844794, 127.135297);
-        MarkerOptions markerOptions4 = new MarkerOptions();
-        markerOptions4.position(a4);
-        markerOptions4.title("상대 2호관");
-        markerOptions4.snippet("1층");
-        markerOptions4.draggable(true);
-        //CameraUpdate cameraUpdate4 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate4);
-        currentMarker = mMap.addMarker(markerOptions4);
-
-        LatLng a5 = new LatLng(35.845824, 127.128157);
-        MarkerOptions markerOptions5 = new MarkerOptions();
-        markerOptions5.position(a5);
-        markerOptions5.title("상대 2호관");
-        markerOptions5.snippet("1층");
-        markerOptions5.draggable(true);
-        //CameraUpdate cameraUpdate5 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate5);
-        currentMarker = mMap.addMarker(markerOptions5);
-
-        LatLng a6 = new LatLng(35.845680, 127.133184);
-        MarkerOptions markerOptions6 = new MarkerOptions();
-        markerOptions6.position(a6);
-        markerOptions6.title("학습 도서관");
-        markerOptions6.snippet("1층");
-        markerOptions6.draggable(true);
-        //CameraUpdate cameraUpdate6 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate6);
-        currentMarker = mMap.addMarker(markerOptions6);
-
-        LatLng a7 = new LatLng(35.847752, 127.143497);
-        MarkerOptions markerOptions7 = new MarkerOptions();
-        markerOptions7.position(a7);
-        markerOptions7.title("의학 도서관");
-        markerOptions7.snippet("1층");
-        markerOptions7.draggable(true);
-        //CameraUpdate cameraUpdate7 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate7);
-        currentMarker = mMap.addMarker(markerOptions7);
-
-        LatLng a8 = new LatLng(35.844102, 127.133763);
-        MarkerOptions markerOptions8 = new MarkerOptions();
-        markerOptions8.position(a8);
-        markerOptions8.title("사회과학대");
-        markerOptions8.snippet("1층");
-        markerOptions8.draggable(true);
-        //CameraUpdate cameraUpdate8 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate8);
-        currentMarker = mMap.addMarker(markerOptions8);
-
-        LatLng a9 = new LatLng(35.842641, 127.132017);
-        MarkerOptions markerOptions9 = new MarkerOptions();
-        markerOptions9.position(a9);
-        markerOptions9.title("사범대 본관");
-        markerOptions9.snippet("1층");
-        markerOptions9.draggable(true);
-        //CameraUpdate cameraUpdate9 = CameraUpdateFactory.newLatLng(Library);
-        //mMap.moveCamera(cameraUpdate9);
-        currentMarker = mMap.addMarker(markerOptions9);
-
+        // 카메라 이동
+        this.googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
     }
 
-
-    public void setDefaultLocation() {
-
-
-        //디폴트 위치, 전북대학교
-        LatLng DEFAULT_LOCATION = new LatLng(35.847706, 127.129153);
-        String markerTitle = "위치정보 가져올 수 없음";
-        String markerSnippet = "위치 퍼미션과 GPS 활성 요부 확인하세요";
-
-
-        if (currentMarker != null) currentMarker.remove();
-
+    /* 마커 생성 */
+    private Marker createMarker(LatLng latLng, String markerTitle, String markerSnippet, float icon) {
         MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(DEFAULT_LOCATION);
+        // 위치
+        markerOptions.position(latLng);
+        // 타이틀
         markerOptions.title(markerTitle);
-        markerOptions.snippet(markerSnippet);
-        markerOptions.draggable(true);
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-        currentMarker = mMap.addMarker(markerOptions);
-
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 15);
-        mMap.moveCamera(cameraUpdate);
-
-    }
-
-
-    //여기부터는 런타임 퍼미션 처리을 위한 메소드들
-    private boolean checkPermission() {
-
-        int hasFineLocationPermission = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION);
-        int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION);
-
-
-
-        if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED &&
-                hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED   ) {
-            return true;
+        // 서브 타이틀
+        if (!TextUtils.isEmpty(markerSnippet)) {
+            markerOptions.snippet(markerSnippet);
         }
 
-        return false;
+        // 아이콘 표시
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(icon));
 
+        // 구글맵에 마크 추가
+        return this.googleMap.addMarker(markerOptions);
     }
 
-
-
-    /*
-     * ActivityCompat.requestPermissions를 사용한 퍼미션 요청의 결과를 리턴받는 메소드입니다.
-     */
-    @Override
-    public void onRequestPermissionsResult(int permsRequestCode,
-                                           @NonNull String[] permissions,
-                                           @NonNull int[] grandResults) {
-
-        if ( permsRequestCode == PERMISSIONS_REQUEST_CODE && grandResults.length == REQUIRED_PERMISSIONS.length) {
-
-            // 요청 코드가 PERMISSIONS_REQUEST_CODE 이고, 요청한 퍼미션 개수만큼 수신되었다면
-
-            boolean check_result = true;
-
-
-            // 모든 퍼미션을 허용했는지 체크합니다.
-
-            for (int result : grandResults) {
-                if (result != PackageManager.PERMISSION_GRANTED) {
-                    check_result = false;
-                    break;
-                }
-            }
-
-
-            if ( check_result ) {
-
-                // 퍼미션을 허용했다면 위치 업데이트를 시작합니다.
-                startLocationUpdates();
-            }
-            else {
-                // 거부한 퍼미션이 있다면 앱을 사용할 수 없는 이유를 설명해주고 앱을 종료합니다.2 가지 경우가 있습니다.
-
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this, REQUIRED_PERMISSIONS[0])
-                        || ActivityCompat.shouldShowRequestPermissionRationale(this, REQUIRED_PERMISSIONS[1])) {
-
-
-                    // 사용자가 거부만 선택한 경우에는 앱을 다시 실행하여 허용을 선택하면 앱을 사용할 수 있습니다.
-                    Snackbar.make(mLayout, "퍼미션이 거부되었습니다. 앱을 다시 실행하여 퍼미션을 허용해주세요. ",
-                            Snackbar.LENGTH_INDEFINITE).setAction("확인", new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View view) {
-
-                            finish();
-                        }
-                    }).show();
-
-                }else {
-
-
-                    // "다시 묻지 않음"을 사용자가 체크하고 거부를 선택한 경우에는 설정(앱 정보)에서 퍼미션을 허용해야 앱을 사용할 수 있습니다.
-                    Snackbar.make(mLayout, "퍼미션이 거부되었습니다. 설정(앱 정보)에서 퍼미션을 허용해야 합니다. ",
-                            Snackbar.LENGTH_INDEFINITE).setAction("확인", new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View view) {
-
-                            finish();
-                        }
-                    }).show();
-                }
-            }
-
-        }
-    }
-
-
-    //여기부터는 GPS 활성화를 위한 메소드들
+    /* 위치정보 활성화 */
     private void showDialogForLocationServiceSetting() {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(Map.this);
-        builder.setTitle("위치 서비스 비활성화");
-        builder.setMessage("앱을 사용하기 위해서는 위치 서비스가 필요합니다.\n"
-                + "위치 설정을 수정하실래요?");
-        builder.setCancelable(true);
-        builder.setPositiveButton("설정", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                Intent callGPSSettingIntent
-                        = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                startActivityForResult(callGPSSettingIntent, GPS_ENABLE_REQUEST_CODE);
-            }
-        });
-        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.cancel();
-            }
-        });
-        builder.create().show();
+        new AlertDialog.Builder(this)
+                .setTitle("위치 서비스")
+                .setMessage("앱을 사용하기 위해 위치 서비스가 필요합니다.\n위치 설정을 하시겠습니까?")
+                .setCancelable(true)
+                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent callGPSSettingIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivityForResult(callGPSSettingIntent, REQUEST_CODE_LOCATION_ENABLE);
+                    }
+                })
+                .setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .show();
     }
 
+    /* 위치가 바뀌면 callback 함수 실행 : 현위치 받아오는 Callback */
+    private LocationCallback mLocationCallback = new LocationCallback() {
+        @Override
+        public void onLocationResult(LocationResult locationResult) {
+            super.onLocationResult(locationResult);
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+            // 위치정보
+            List<Location> locationList = locationResult.getLocations();
 
-        switch (requestCode) {
+            if (locationList.size() > 0) {
+                Log.d(TAG, "LocationCallback");
 
-            case GPS_ENABLE_REQUEST_CODE:
+                Location location = locationList.get(locationList.size() - 1);
+                //Location location = locationList.get(0);
 
-                //사용자가 GPS 활성 시켰는지 검사
-                if (checkLocationServicesStatus()) {
-                    if (checkLocationServicesStatus()) {
+                // 나의 현재 위치에 마커 생성하고 이동
+                setMyLocation(location.getLatitude(), location.getLongitude());
+            }
+        }
+    };
 
-                        Log.d(TAG, "onActivityResult : GPS 활성화 되있음");
+    /* 편의시설 객체 */
+    private class Facility {
+        String title;
+        String snippet;
+        double latitude;                 // 위도
+        double longitude;                // 경도
 
-
-                        needRequest = true;
-
-                        return;
-                    }
-                }
-
-                break;
+        Facility(String title, String snippet, double latitude, double longitude) {
+            this.title = title;
+            this.snippet = snippet;
+            this.latitude = latitude;
+            this.longitude = longitude;
         }
     }
-
-
-
-
-
-
 }
