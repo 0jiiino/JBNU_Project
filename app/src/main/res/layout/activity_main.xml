@@ -11,7 +11,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:font="@font/neodgm"
+        android:fontFamily="@font/neodgm"
         android:text="벨트 취득 필수 항목 체크리스트"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -20,7 +20,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:font="@font/neodgm"
+        android:fontFamily="@font/neodgm"
         android:text="교내 편의 시설 위치 정보"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -29,7 +29,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:font="@font/neodgm"
+        android:fontFamily="@font/neodgm"
         android:text="포인트 관련 공지사항"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -39,7 +39,7 @@
         android:id="@+id/tip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:font="@font/neodgm"
+        android:fontFamily="@font/neodgm"
         android:text="꿀팁 공유 게시판"
         android:textSize="25dp"
         android:textStyle="bold"/>
