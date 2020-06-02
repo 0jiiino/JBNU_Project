@@ -23,6 +23,7 @@ public class BeltActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btn_yellow = (Button)findViewById(R.id.btn_yellow);
         btn_yellow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,21 +33,43 @@ public class BeltActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button btn_blue = (Button)findViewById(R.id.btn_blue);
         btn_blue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //옐로우 벨트 클릭시 활성화
+                //블루 벨트 클릭시 활성화
                 Intent intent = new Intent(getApplicationContext(),BlueBelt.class);
                 startActivity(intent);
             }
         });
+
         Button btn_red = (Button)findViewById(R.id.btn_red);
         btn_red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //옐로우 벨트 클릭시 활성화
+                //레드 벨트 클릭시 활성화
                 Intent intent = new Intent(getApplicationContext(),RedBelt.class);
+                startActivity(intent);
+            }
+        });
+
+        Button language = (Button)findViewById(R.id.language);
+        language.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //외국어 환산표 클릭시 활성화
+                Intent intent = new Intent(getApplicationContext(),language.class);
+                startActivity(intent);
+            }
+        });
+
+        Button beltpointlist = (Button)findViewById(R.id.beltpointlist);
+        beltpointlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //큰사람~
+                Intent intent = new Intent(getApplicationContext(),pointlist.class);
                 startActivity(intent);
             }
         });

@@ -14,7 +14,7 @@
     <LinearLayout
         android:id="@+id/mainlinear"
         android:layout_width="273dp"
-        android:layout_height="307dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="WHITE BELT(1학년)"
-            android:textColor="#8182C67E"
+            android:textColor="#009260"
             android:textSize="25sp" />
 
         <Button
@@ -43,7 +43,7 @@
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="YELLOW BELT(2학년)"
-            android:textColor="#FFEB3B"
+            android:textColor="#FFC01B"
             android:textSize="25sp"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintTop_toBottomOf="@+id/btn_white" />
@@ -76,12 +76,39 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintTop_toBottomOf="@+id/btn_blue" />
 
+        <Button
+            android:id="@+id/language"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bubbl2"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:text="+ 외국어 환산표"
+            android:textColor="#645394"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/beltpointlist"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="274dp"
+            android:layout_height="70dp"
+            android:background="@drawable/bubbl2"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:text="+ 큰사람 포인트 리스트"
+            android:textColor="#7D886E"
+            android:textSize="23sp" />
+
+
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll5"
         android:layout_width="0dp"
-        android:layout_height="210dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="60dp"

@@ -22,6 +22,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:gravity="center"
+            android:fontFamily="@font/neodgm"
             android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.\n이동버튼 터치시 관련 링크로 이동합니다."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -35,6 +36,7 @@
             android:gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -46,6 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/neodgm"
                 android:text="취업지원과 상담 1회" />
 
             <EditText
@@ -55,6 +58,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -65,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="popup01"
+                android:fontFamily="@font/neodgm"
                 android:text="이동" />
         </LinearLayout>
 
@@ -86,6 +91,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/neodgm"
                 android:text="기업탐방 / 현장실습 택 1" />
 
             <EditText
@@ -95,6 +101,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -105,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="popup02"
+                android:fontFamily="@font/neodgm"
                 android:text="이동" />
         </LinearLayout>
 
@@ -126,6 +134,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/neodgm"
                 android:text="외국어 Lv4 이상" />
 
             <EditText
@@ -135,6 +144,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -145,6 +155,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="popup03"
+                android:fontFamily="@font/neodgm"
                 android:text="이동" />
         </LinearLayout>
 
@@ -175,18 +186,21 @@
                     android:id="@+id/checkbox04"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/neodgm"
                     android:text="교양 1권" />
 
                 <CheckBox
                     android:id="@+id/checkbox05"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/neodgm"
                     android:text="교양 2권" />
 
                 <CheckBox
                     android:id="@+id/checkbox06"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/neodgm"
                     android:text="자율 1권" />
 
             </LinearLayout>
@@ -199,6 +213,7 @@
                 android:layout_gravity="center"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -214,6 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/neodgm"
                     android:text="책 검색" />
 
                 <Button
@@ -221,6 +237,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/neodgm"
                     android:text="책 리스트" />
 
             </LinearLayout>
@@ -245,6 +262,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/neodgm"
                 android:text="입사지원서 교육 1회" />
 
             <EditText
@@ -254,6 +272,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -264,6 +283,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="popup07"
+                android:fontFamily="@font/neodgm"
                 android:text="이동" />
         </LinearLayout>
 
@@ -285,6 +305,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/neodgm"
                 android:text="기업직무 적성검사 1회" />
 
             <EditText
@@ -294,6 +315,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -304,6 +326,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="popup08"
+                android:fontFamily="@font/neodgm"
                 android:text="이동" />
         </LinearLayout>
 
@@ -325,6 +348,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/neodgm"
                 android:text="셀프면접 / 면접기초교육 택 1" />
 
             <EditText
@@ -334,6 +358,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -344,6 +369,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="popup09"
+                android:fontFamily="@font/neodgm"
                 android:text="이동" />
         </LinearLayout>
 
@@ -365,6 +391,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/neodgm"
                 android:text="경력 계획서" />
 
             <EditText
@@ -374,6 +401,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -384,6 +412,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="popup05"
+                android:fontFamily="@font/neodgm"
                 android:text="이동" />
         </LinearLayout>
 
@@ -405,6 +434,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="직무 심화 교육" />
 
             <EditText
@@ -414,6 +444,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -438,6 +469,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="기업의 달인되기" />
 
             <EditText
@@ -447,6 +479,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -471,6 +504,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="졸업생 멘토링" />
 
             <EditText
@@ -480,6 +514,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -504,6 +539,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="채용 설명회" />
 
             <EditText
@@ -513,6 +549,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -537,6 +574,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="채용 박람회" />
 
             <EditText
@@ -546,6 +584,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -570,6 +609,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="전공 자격증" />
 
             <EditText
@@ -579,6 +619,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -603,6 +644,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="취업 교과목" />
 
             <EditText
@@ -612,6 +654,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="포인트"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -636,6 +679,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:text="총 포인트" />
 
             <EditText
@@ -645,6 +689,7 @@
                 android:layout_weight="2"
                 android:ems="10"
                 android:gravity="center"
+                android:fontFamily="@font/neodgm"
                 android:hint="합 500"
                 android:inputType="number" />
 
@@ -653,6 +698,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="계산" />
         </LinearLayout>
     </LinearLayout>

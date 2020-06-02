@@ -39,7 +39,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0-alpha09'
     implementation 'com.android.volley:volley:1.1.1'
 
-    implementation('com.github.hotchemi:permissionsdispatcher:3.0.1') { //권한 잡는 라이브러리 main 액티비티 - 23라인
+    implementation('com.github.hotchemi:permissionsdispatcher:3.0.1') {
+        //권한 잡는 라이브러리 main 액티비티 - 23라인
         // if you don't use android.app.Fragment you can exclude support for them
         exclude module: 'support-v13'
     }
