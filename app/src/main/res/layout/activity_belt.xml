@@ -10,16 +10,18 @@
     android:orientation="vertical"
     tools:context=".BeltActivity">
 
+
     <LinearLayout
         android:id="@+id/mainlinear"
         android:layout_width="273dp"
         android:layout_height="307dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView9">
+        app:layout_constraintTop_toBottomOf="@+id/ll5">
 
         <Button
             android:id="@+id/btn_white"
@@ -29,7 +31,7 @@
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="WHITE BELT(1학년)"
-            android:textColor="#A8080110"
+            android:textColor="#8182C67E"
             android:textSize="20sp" />
 
         <Button
@@ -73,21 +75,42 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="264dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/buttonshape"
-        android:font="@font/neodgm"
-        android:fontFamily="@font/neodgm"
-        android:text="벨트리스트"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="#D97E3FEF"
-        android:textSize="35sp"
+    <LinearLayout
+        android:id="@+id/ll5"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/love" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="194dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/neodgm"
+            android:text="벨트리스트"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textColor="#D9000000"
+            android:textSize="35sp"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/love" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

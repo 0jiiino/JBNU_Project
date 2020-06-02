@@ -8,40 +8,151 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/neodgm"
-        android:text="벨트 항목 체크리스트"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:id="@+id/belt"/>
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="210dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/neodgm"
-        android:text="교내 편의 시설 위치 정보"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:id="@+id/map"/>
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/love" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/neodgm"
-        android:text="포인트 관련 공지사항"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:id="@+id/notice"/>
+        <Button
+            android:id="@+id/belt"
+            android:layout_width="150dp"
+            android:layout_height="76dp"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/neodgm"
+            android:shadowColor="#00FFFFFF"
+            android:text="벨트 항목 체크리스트"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/tip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/neodgm"
-        android:text="꿀팁 공유 게시판"
-        android:textSize="25dp"
-        android:textStyle="bold"/>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/love" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="210dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/love" />
+
+        <Button
+            android:id="@+id/map"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/neodgm"
+            android:shadowColor="#00FFFFFF"
+            android:text="교내 편의 시설 위치"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/love" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="210dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/love" />
+
+        <Button
+            android:id="@+id/notice"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/neodgm"
+            android:shadowColor="#00FFFFFF"
+            android:text="포인트 관련 공지사항"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/love" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll5"
+        android:layout_width="210dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/love" />
+
+        <Button
+            android:id="@+id/tip"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/neodgm"
+            android:shadowColor="#00FFFFFF"
+            android:text="꿀팁 공유 게시판"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:src="@drawable/love" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -6,25 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".WhiteBelt">
 
+
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:gravity="center"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <CheckBox
             android:id="@+id/checkbox01"
             android:layout_width="0dp"
-            android:buttonTint="#673AB7"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:buttonTint="#673AB7"
             android:fontFamily="@font/neodgm"
             android:text="대학생활계획서" />
 
@@ -34,8 +36,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:gravity="center"
             android:fontFamily="@font/neodgm"
+            android:gravity="center"
             android:hint="포인트"
             android:inputType="number"
             android:maxLength="2" />
@@ -44,8 +46,8 @@
             android:id="@+id/button01"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/neodgm"
             android:layout_weight="1"
+            android:fontFamily="@font/neodgm"
             android:onClick="popup"
             android:text="이동" />
 
@@ -55,12 +57,12 @@
         android:id="@+id/ll2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:gravity="center"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll1">
 
@@ -68,9 +70,9 @@
             android:id="@+id/checkbox02"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/neodgm"
-            android:buttonTint="#673AB7"
             android:layout_weight="2"
+            android:buttonTint="#673AB7"
+            android:fontFamily="@font/neodgm"
             android:text="인성 / 적성검사 (택 1)" />
 
         <EditText
@@ -79,8 +81,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:gravity="center"
             android:fontFamily="@font/neodgm"
+            android:gravity="center"
             android:hint="포인트"
             android:inputType="number"
             android:maxLength="2" />
@@ -109,12 +111,12 @@
         android:id="@+id/ll3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:gravity="center"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll2">
 
@@ -122,8 +124,8 @@
             android:id="@+id/checkbox03"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:buttonTint="#673AB7"
             android:layout_weight="2"
+            android:buttonTint="#673AB7"
             android:fontFamily="@font/neodgm"
             android:text="외국어 Lv1 이상" />
 
@@ -132,9 +134,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:ems="10"
             android:fontFamily="@font/neodgm"
             android:gravity="center"
-            android:ems="10"
             android:hint="포인트"
             android:inputType="number"
             android:maxLength="2" />
@@ -143,33 +145,33 @@
             android:id="@+id/button03"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/neodgm"
             android:layout_weight="1"
+            android:fontFamily="@font/neodgm"
             android:onClick="popup2"
             android:text="이동" />
 
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/ll6"
         android:layout_width="280dp"
         android:layout_height="50dp"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll5">
+        app:layout_constraintTop_toBottomOf="@+id/ll5"
+        app:layout_constraintVertical_bias="0.492">
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
             android:fontFamily="@font/neodgm"
+            android:gravity="center"
             android:text="총 포인트" />
 
         <EditText
@@ -178,8 +180,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:ems="10"
-            android:gravity="center"
             android:fontFamily="@font/neodgm"
+            android:gravity="center"
             android:hint="합 200"
             android:inputType="number" />
 
@@ -192,7 +194,6 @@
             android:text="계산" />
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/ll5"
         android:layout_width="match_parent"
@@ -201,7 +202,7 @@
         android:layout_marginLeft="2dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll3">
 
@@ -209,8 +210,8 @@
             android:id="@+id/ll4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_weight="1"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll3"
@@ -219,9 +220,9 @@
             <CheckBox
                 android:id="@+id/checkbox04"
                 android:layout_width="wrap_content"
-                android:fontFamily="@font/neodgm"
-                android:buttonTint="#673AB7"
                 android:layout_height="wrap_content"
+                android:buttonTint="#673AB7"
+                android:fontFamily="@font/neodgm"
                 android:text="교양 1권" />
 
             <CheckBox
@@ -235,9 +236,9 @@
             <CheckBox
                 android:id="@+id/checkbox06"
                 android:layout_width="wrap_content"
-                android:fontFamily="@font/neodgm"
-                android:buttonTint="#673AB7"
                 android:layout_height="wrap_content"
+                android:buttonTint="#673AB7"
+                android:fontFamily="@font/neodgm"
                 android:text="자율 1권" />
 
         </LinearLayout>
@@ -246,8 +247,8 @@
             android:id="@+id/editText04"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.8"
             android:layout_gravity="center"
+            android:layout_weight="0.8"
             android:ems="10"
             android:fontFamily="@font/neodgm"
             android:gravity="center"
@@ -258,23 +259,23 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintHorizontal_bias="0.5"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintHorizontal_bias="0.5">
 
             <Button
                 android:id="@+id/search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/neodgm"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="책 검색" />
 
             <Button
                 android:id="@+id/button04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/neodgm"
                 android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
                 android:text="책 리스트" />
 
         </LinearLayout>
@@ -285,12 +286,13 @@
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="176dp"
+        android:fontFamily="@font/neodgm"
+        android:gravity="center"
         android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.\n이동버튼 터치시 관련 링크로 이동합니다."
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
