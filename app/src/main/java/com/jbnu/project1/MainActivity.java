@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this, Splash.class);
+        startActivity(intent);
 
         Button tip = (Button)findViewById(R.id.tip);
         tip.setOnClickListener(new View.OnClickListener() {

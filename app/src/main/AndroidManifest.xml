@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".pointlist"></activity>
+        <activity android:name=".Splash"></activity>
+        <activity android:name=".pointlist" />
         <activity android:name=".language" />
         <activity android:name=".notice" />
         <activity android:name=".SearchBook" />
