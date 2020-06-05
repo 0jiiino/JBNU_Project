@@ -16,7 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Splash"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".FindActivity" />
+        <activity android:name=".Firelogin" />
+        <activity android:name=".Firesign" />
+        <activity android:name=".Splash" />
         <activity android:name=".pointlist" />
         <activity android:name=".language" />
         <activity android:name=".notice" />
@@ -42,8 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
