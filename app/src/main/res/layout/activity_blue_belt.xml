@@ -4,7 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6A855ECA"
     tools:context=".BlueBelt">
+
+    <LinearLayout
+        android:id="@+id/abc"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:background="#C5E6DDF8"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/love" />
+
+        <Button
+            android:id="@+id/belt"
+            android:layout_width="290dp"
+            android:layout_height="76dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/neodgm"
+            android:shadowColor="#00FFFFFF"
+            android:text="BLUE BELT(3학년)"
+            android:textColor="#1C38D5"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/love" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/mainlinear"
@@ -20,10 +62,10 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="120dp"
             android:gravity="center"
             android:fontFamily="@font/neodgm"
-            android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.\n이동버튼 터치시 관련 링크로 이동합니다."
+            android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +83,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8">
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox01"
@@ -70,7 +113,7 @@
                 android:layout_weight="1"
                 android:onClick="popup01"
                 android:fontFamily="@font/neodgm"
-                android:text="이동" />
+                android:background="@drawable/how" />
         </LinearLayout>
 
         <LinearLayout
@@ -84,7 +127,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll1">
+            app:layout_constraintTop_toBottomOf="@+id/ll1"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox02"
@@ -113,7 +157,7 @@
                 android:layout_weight="1"
                 android:onClick="popup02"
                 android:fontFamily="@font/neodgm"
-                android:text="이동" />
+                android:background="@drawable/how" />
         </LinearLayout>
 
         <LinearLayout
@@ -127,7 +171,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll2">
+            app:layout_constraintTop_toBottomOf="@+id/ll2"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox03"
@@ -156,7 +201,7 @@
                 android:layout_weight="1"
                 android:onClick="popup03"
                 android:fontFamily="@font/neodgm"
-                android:text="이동" />
+                android:background="@drawable/how" />
         </LinearLayout>
 
         <LinearLayout
@@ -169,7 +214,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll3">
+            app:layout_constraintTop_toBottomOf="@+id/ll3"
+            android:background="@drawable/border">
 
             <LinearLayout
                 android:id="@+id/ll4"
@@ -205,40 +251,44 @@
 
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/editText04"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:layout_gravity="center"
-                android:ems="10"
-                android:gravity="center"
-                android:fontFamily="@font/neodgm"
-                android:hint="포인트"
-                android:inputType="number"
-                android:maxLength="2" />
-
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintHorizontal_bias="0.5"
-                android:orientation="vertical">
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                app:layout_constraintHorizontal_bias="0.5">
+
+                <EditText
+                    android:id="@+id/editText04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/neodgm"
+                    android:gravity="center"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
 
                 <Button
-                    android:id="@+id/button06"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:fontFamily="@font/neodgm"
-                    android:text="책 검색" />
+                    android:background="@drawable/find"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm" />
 
                 <Button
                     android:id="@+id/button04"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:fontFamily="@font/neodgm"
-                    android:text="책 리스트" />
+                    android:background="@drawable/booklist"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm" />
 
             </LinearLayout>
 
@@ -255,7 +305,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll45">
+            app:layout_constraintTop_toBottomOf="@+id/ll45"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox08"
@@ -284,7 +335,7 @@
                 android:layout_weight="1"
                 android:onClick="popup07"
                 android:fontFamily="@font/neodgm"
-                android:text="이동" />
+                android:background="@drawable/how" />
         </LinearLayout>
 
         <LinearLayout
@@ -298,7 +349,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll7">
+            app:layout_constraintTop_toBottomOf="@+id/ll7"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox09"
@@ -327,7 +379,7 @@
                 android:layout_weight="1"
                 android:onClick="popup08"
                 android:fontFamily="@font/neodgm"
-                android:text="이동" />
+                android:background="@drawable/how" />
         </LinearLayout>
 
         <LinearLayout
@@ -341,7 +393,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll8">
+            app:layout_constraintTop_toBottomOf="@+id/ll8"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox10"
@@ -370,7 +423,7 @@
                 android:layout_weight="1"
                 android:onClick="popup09"
                 android:fontFamily="@font/neodgm"
-                android:text="이동" />
+                android:background="@drawable/how" />
         </LinearLayout>
 
         <LinearLayout
@@ -384,7 +437,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll9">
+            app:layout_constraintTop_toBottomOf="@+id/ll9"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox07"
@@ -413,7 +467,7 @@
                 android:layout_weight="1"
                 android:onClick="popup05"
                 android:fontFamily="@font/neodgm"
-                android:text="이동" />
+                android:background="@drawable/how" />
         </LinearLayout>
 
         <LinearLayout
@@ -427,7 +481,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll11">
+            app:layout_constraintTop_toBottomOf="@+id/ll11"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox20"
@@ -462,7 +517,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll12">
+            app:layout_constraintTop_toBottomOf="@+id/ll12"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox21"
@@ -497,7 +553,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll13">
+            app:layout_constraintTop_toBottomOf="@+id/ll13"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox22"
@@ -532,7 +589,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll14">
+            app:layout_constraintTop_toBottomOf="@+id/ll14"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox23"
@@ -567,7 +625,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll15">
+            app:layout_constraintTop_toBottomOf="@+id/ll15"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox24"
@@ -602,7 +661,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll16">
+            app:layout_constraintTop_toBottomOf="@+id/ll16"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox25"
@@ -637,7 +697,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll17">
+            app:layout_constraintTop_toBottomOf="@+id/ll17"
+            android:background="@drawable/border">
 
             <CheckBox
                 android:id="@+id/checkbox26"
@@ -699,7 +760,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/neodgm"
-                android:text="계산" />
+                android:background="@drawable/total" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -7,7 +7,6 @@
     android:background="#6A855ECA"
     tools:context=".WhiteBelt">
 
-
     <LinearLayout
         android:id="@+id/ll10"
         android:layout_width="0dp"
