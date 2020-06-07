@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //꿀팁 게시판 클릭시 활성화
-                Intent intent = new Intent(getApplicationContext(),Firesign.class);
+                Intent intent = new Intent(getApplicationContext(),BoardActivity.class);
                 startActivity(intent);
             }
         });

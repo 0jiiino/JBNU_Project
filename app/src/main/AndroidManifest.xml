@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".PostActivity"></activity>
+        <activity android:name=".BoardActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".FindActivity" />
         <activity android:name=".Firelogin" />
         <activity android:name=".Firesign" />
