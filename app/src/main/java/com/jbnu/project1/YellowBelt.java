@@ -104,7 +104,7 @@ public class YellowBelt extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button btn6 = (Button)findViewById(R.id.button06);
+        Button btn6 = (Button)findViewById(R.id.search);
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

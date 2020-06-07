@@ -4,701 +4,770 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6A855ECA"
     tools:context=".RedBelt">
 
     <LinearLayout
-        android:id="@+id/mainlinear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:fontFamily="@font/neodgm"
-        android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.\n이동버튼 터치시 관련 링크로 이동합니다."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/ll1"
+            android:id="@+id/abc"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:gravity="center"
+            android:layout_height="100dp"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="20dp"
+            android:background="#C5E6DDF8"
+            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8">
+            app:layout_constraintTop_toTopOf="parent">
 
-        <CheckBox
-            android:id="@+id/checkbox01"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/neodgm"
-            android:text="취업계획서" />
-
-        <EditText
-            android:id="@+id/editText01"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <Button
-            android:id="@+id/button01"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="popup01"
-            android:fontFamily="@font/neodgm"
-            android:text="이동" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll1">
-
-        <CheckBox
-            android:id="@+id/checkbox02"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/neodgm"
-            android:text="취업지원과 상담 1회" />
-
-        <EditText
-            android:id="@+id/editText02"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <Button
-            android:id="@+id/button02"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="popup02"
-            android:fontFamily="@font/neodgm"
-            android:text="이동" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll3"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll2">
-
-        <CheckBox
-            android:id="@+id/checkbox03"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/neodgm"
-            android:text="외국어 Lv5 이상" />
-
-        <EditText
-            android:id="@+id/editText03"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <Button
-            android:id="@+id/button03"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="popup03"
-            android:fontFamily="@font/neodgm"
-            android:text="이동" />
-    </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll45"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll3">
-
-            <LinearLayout
-                android:id="@+id/ll4"
-                android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll3"
-                app:layout_constraintVertical_bias="0.068">
-
-                <CheckBox
-                    android:id="@+id/checkbox04"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/neodgm"
-                    android:text="교양 1권" />
-
-                <CheckBox
-                    android:id="@+id/checkbox05"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/neodgm"
-                    android:text="교양 2권" />
-
-                <CheckBox
-                    android:id="@+id/checkbox06"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/neodgm"
-                    android:text="자율 1권" />
-
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/editText04"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:layout_gravity="center"
-                android:ems="10"
-                android:gravity="center"
-                android:fontFamily="@font/neodgm"
-                android:hint="포인트"
-                android:inputType="number"
-                android:maxLength="2" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintHorizontal_bias="0.5"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/button06"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/neodgm"
-                    android:text="책 검색" />
-
-                <Button
-                    android:id="@+id/button04"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/neodgm"
-                    android:text="책 리스트" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll7"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll45">
-
-        <CheckBox
-            android:id="@+id/checkbox08"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/neodgm"
-            android:text="기업탐방/현장실습 택 1" />
-
-        <EditText
-            android:id="@+id/editText07"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <Button
-            android:id="@+id/button07"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="popup07"
-            android:fontFamily="@font/neodgm"
-            android:text="이동" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll8"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll7">
-
-        <CheckBox
-            android:id="@+id/checkbox09"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/neodgm"
-            android:text="입사지원서 클리닉 1회" />
-
-        <EditText
-            android:id="@+id/editText08"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <Button
-            android:id="@+id/button08"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="popup08"
-            android:fontFamily="@font/neodgm"
-            android:text="이동" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll9"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll8">
-
-        <CheckBox
-            android:id="@+id/checkbox10"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/neodgm"
-            android:text="기업 인적성검사 교육 1회" />
-
-        <EditText
-            android:id="@+id/editText09"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <Button
-            android:id="@+id/button09"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="popup09"
-            android:fontFamily="@font/neodgm"
-            android:text="이동" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/ll11"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll9">
-
-        <CheckBox
-            android:id="@+id/checkbox07"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/neodgm"
-            android:text="면접심화교육 / 면접캠프 택 1" />
-
-        <EditText
-            android:id="@+id/editText06"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-        <Button
-            android:id="@+id/button05"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:onClick="popup05"
-            android:fontFamily="@font/neodgm"
-            android:text="이동" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll12"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll11">
-
-        <CheckBox
-            android:id="@+id/checkbox20"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/neodgm"
-            android:text="직무심화교육" />
-
-        <EditText
-            android:id="@+id/editText20"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll13"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll12">
-
-        <CheckBox
-            android:id="@+id/checkbox21"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/neodgm"
-            android:text="기업의 달인되기" />
-
-        <EditText
-            android:id="@+id/editText21"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll14"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll13">
-
-        <CheckBox
-            android:id="@+id/checkbox22"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/neodgm"
-            android:text="졸업생 멘토링" />
-
-        <EditText
-            android:id="@+id/editText22"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll15"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll14">
-
-        <CheckBox
-            android:id="@+id/checkbox23"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/neodgm"
-            android:text="채용 설명회" />
-
-        <EditText
-            android:id="@+id/editText23"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll16"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll15">
-
-        <CheckBox
-            android:id="@+id/checkbox24"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/neodgm"
-            android:text="채용 박람회" />
-
-        <EditText
-            android:id="@+id/editText24"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll17"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll16">
-
-        <CheckBox
-            android:id="@+id/checkbox25"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/neodgm"
-            android:text="전공 자격증" />
-
-        <EditText
-            android:id="@+id/editText25"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll18"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        >
-
-        <CheckBox
-            android:id="@+id/checkbox26"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/neodgm"
-            android:text="취업 교과목" />
-
-        <EditText
-            android:id="@+id/editText26"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center"
-            android:fontFamily="@font/neodgm"
-            android:hint="포인트"
-            android:inputType="number"
-            android:maxLength="2" />
-
-    </LinearLayout>
-        <LinearLayout
-            android:id="@+id/ll10"
-            android:layout_width="280dp"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll18"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/neodgm"
-                android:text="총 포인트" />
-
-            <EditText
-                android:id="@+id/editText05"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="10"
-                android:gravity="center"
-                android:fontFamily="@font/neodgm"
-                android:hint="합 500"
-                android:inputType="number" />
+                app:srcCompat="@drawable/love" />
 
             <Button
-                android:id="@+id/plus"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:id="@+id/belt"
+                android:layout_width="290dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="#00FFFFFF"
                 android:fontFamily="@font/neodgm"
-                android:text="계산" />
+                android:shadowColor="#00FFFFFF"
+                android:text="RED BELT(4학년)"
+                android:textColor="#F63636"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/love" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mainlinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:fontFamily="@font/neodgm"
+                android:text="포인트를 획득하지 못한 항목은 '0'을 입력하세요.\n이동버튼 터치시 관련 링크로 이동합니다."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.5" />
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox01"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/neodgm"
+                    android:text="취업계획서" />
+
+                <EditText
+                    android:id="@+id/editText01"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <Button
+                    android:id="@+id/button01"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:onClick="popup01"
+                    android:fontFamily="@font/neodgm"
+                    android:background="@drawable/how" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll1"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/neodgm"
+                    android:text="취업지원과 상담 1회" />
+
+                <EditText
+                    android:id="@+id/editText02"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <Button
+                    android:id="@+id/button02"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:onClick="popup02"
+                    android:fontFamily="@font/neodgm"
+                    android:background="@drawable/how" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll2"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/neodgm"
+                    android:text="외국어 Lv5 이상" />
+
+                <EditText
+                    android:id="@+id/editText03"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <Button
+                    android:id="@+id/button03"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:onClick="popup03"
+                    android:fontFamily="@font/neodgm"
+                    android:background="@drawable/how" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll3"
+                android:background="@drawable/border">
+
+                <LinearLayout
+                    android:id="@+id/ll4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll3"
+                    app:layout_constraintVertical_bias="0.068">
+
+                    <CheckBox
+                        android:id="@+id/checkbox04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/neodgm"
+                        android:text="교양 1권" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/neodgm"
+                        android:text="교양 2권" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/neodgm"
+                        android:text="자율 1권" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:orientation="horizontal"
+                    app:layout_constraintHorizontal_bias="0.5">
+
+                    <EditText
+                        android:id="@+id/editText04"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:fontFamily="@font/neodgm"
+                        android:gravity="center"
+                        android:hint="포인트"
+                        android:inputType="number"
+                        android:maxLength="2" />
+
+                    <Button
+                        android:id="@+id/search"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/find"
+                        android:gravity="center"
+                        android:fontFamily="@font/neodgm" />
+
+                    <Button
+                        android:id="@+id/button04"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/booklist"
+                        android:gravity="center"
+                        android:fontFamily="@font/neodgm" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll7"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll45"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox08"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/neodgm"
+                    android:text="기업탐방/현장실습 택 1" />
+
+                <EditText
+                    android:id="@+id/editText07"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <Button
+                    android:id="@+id/button07"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:onClick="popup07"
+                    android:fontFamily="@font/neodgm"
+                    android:background="@drawable/how" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll8"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll7"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox09"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/neodgm"
+                    android:text="입사지원서 클리닉 1회" />
+
+                <EditText
+                    android:id="@+id/editText08"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <Button
+                    android:id="@+id/button08"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:onClick="popup08"
+                    android:fontFamily="@font/neodgm"
+                    android:background="@drawable/how" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll9"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll8"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/neodgm"
+                    android:text="기업 인적성검사 교육 1회" />
+
+                <EditText
+                    android:id="@+id/editText09"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <Button
+                    android:id="@+id/button09"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:onClick="popup09"
+                    android:fontFamily="@font/neodgm"
+                    android:background="@drawable/how" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll11"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll9"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox07"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/neodgm"
+                    android:text="면접심화교육 / 면접캠프 택 1" />
+
+                <EditText
+                    android:id="@+id/editText06"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <Button
+                    android:id="@+id/button05"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:onClick="popup05"
+                    android:fontFamily="@font/neodgm"
+                    android:background="@drawable/how" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll12"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll11"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/neodgm"
+                    android:text="직무심화교육" />
+
+                <EditText
+                    android:id="@+id/editText20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll13"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll12"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/neodgm"
+                    android:text="기업의 달인되기" />
+
+                <EditText
+                    android:id="@+id/editText21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll14"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll13"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/neodgm"
+                    android:text="졸업생 멘토링" />
+
+                <EditText
+                    android:id="@+id/editText22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll15"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll14"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/neodgm"
+                    android:text="채용 설명회" />
+
+                <EditText
+                    android:id="@+id/editText23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll16"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll15"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/neodgm"
+                    android:text="채용 박람회" />
+
+                <EditText
+                    android:id="@+id/editText24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll17"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll16"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/neodgm"
+                    android:text="전공 자격증" />
+
+                <EditText
+                    android:id="@+id/editText25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll18"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/border">
+
+                <CheckBox
+                    android:id="@+id/checkbox26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/neodgm"
+                    android:text="취업 교과목" />
+
+                <EditText
+                    android:id="@+id/editText26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="포인트"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll10"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/neodgm"
+                    android:text="총 포인트" />
+
+                <EditText
+                    android:id="@+id/editText05"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/neodgm"
+                    android:hint="합 500"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/plus"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/neodgm"
+                    android:text="계산" />
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
+
+
 </ScrollView>
