@@ -16,6 +16,7 @@
         android:layout_width="273dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,24 +28,25 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="274dp"
             android:layout_height="70dp"
-            android:background="@drawable/bubbl2"
+            android:background="@drawable/shadow"
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="WHITE BELT(1학년)"
             android:textColor="#009260"
-            android:textSize="25sp" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_yellow"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="274dp"
             android:layout_height="70dp"
-            android:background="@drawable/bubbl2"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shadow"
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="YELLOW BELT(2학년)"
             android:textColor="#FFC01B"
-            android:textSize="25sp"
+            android:textSize="18sp"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintTop_toBottomOf="@+id/btn_white" />
 
@@ -53,12 +55,13 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="274dp"
             android:layout_height="70dp"
-            android:background="@drawable/bubbl2"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shadow"
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="BLUE BELT(3학년)"
             android:textColor="#1C38D5"
-            android:textSize="25sp"
+            android:textSize="18sp"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintTop_toBottomOf="@+id/btn_yellow" />
 
@@ -67,39 +70,41 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="274dp"
             android:layout_height="70dp"
-            android:background="@drawable/bubbl2"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shadow"
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="RED BELT(4학년)"
             android:textColor="#F63636"
-            android:textSize="25sp"
+            android:textSize="18sp"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintTop_toBottomOf="@+id/btn_blue" />
 
         <Button
             android:id="@+id/language"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
+            android:layout_width="274dp"
             android:layout_height="70dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/bubbl2"
+            android:background="@drawable/shadow"
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="+ 외국어 환산표"
             android:textColor="#645394"
-            android:textSize="25sp" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/beltpointlist"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="274dp"
             android:layout_height="70dp"
-            android:background="@drawable/bubbl2"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shadow"
             android:fontFamily="@font/neodgm"
             android:gravity="center"
             android:text="+ 큰사람 포인트 리스트"
             android:textColor="#7D886E"
-            android:textSize="23sp" />
+            android:textSize="18sp" />
 
 
 
@@ -121,26 +126,26 @@
 
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="40dp"
-            android:layout_height="45dp"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/love" />
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="194dp"
+            android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:gravity="center"
             android:fontFamily="@font/neodgm"
+            android:gravity="center"
             android:text="벨트리스트"
             android:textAppearance="@style/TextAppearance.AppCompat.Display3"
             android:textColor="#D9000000"
             android:textSize="35sp"
-            app:layout_constraintHorizontal_bias="0.5" />
+            />
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="40dp"
-            android:layout_height="45dp"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/love" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

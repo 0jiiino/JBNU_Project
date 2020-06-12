@@ -14,13 +14,17 @@
 
         <LinearLayout
             android:id="@+id/abc"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
-            android:background="#C5E6DDF8"
+            android:layout_marginTop="15dp"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/shadow"
             android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,27 +32,27 @@
 
             <ImageView
                 android:id="@+id/imageView1"
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/love" />
 
             <Button
                 android:id="@+id/belt"
-                android:layout_width="290dp"
+                android:layout_width="wrap_content"
                 android:layout_height="76dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:background="#00FFFFFF"
                 android:fontFamily="@font/neodgm"
+                android:gravity="center"
                 android:shadowColor="#00FFFFFF"
                 android:text="RED BELT(4학년)"
-                android:textColor="#F63636"
+                android:textColor="#C4BD0000"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/love" />
         </LinearLayout>
@@ -93,6 +97,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox01"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -137,6 +142,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox02"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -181,6 +187,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox03"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -235,6 +242,7 @@
 
                     <CheckBox
                         android:id="@+id/checkbox04"
+                        android:buttonTint="#FFFFFF"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/neodgm"
@@ -242,6 +250,7 @@
 
                     <CheckBox
                         android:id="@+id/checkbox05"
+                        android:buttonTint="#FFFFFF"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/neodgm"
@@ -249,6 +258,7 @@
 
                     <CheckBox
                         android:id="@+id/checkbox06"
+                        android:buttonTint="#FFFFFF"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/neodgm"
@@ -315,6 +325,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox08"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -359,6 +370,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox09"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -403,6 +415,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox10"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -448,6 +461,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox07"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -492,6 +506,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox20"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -528,6 +543,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox21"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -564,6 +580,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox22"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -600,6 +617,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox23"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -636,6 +654,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox24"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -672,6 +691,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox25"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -707,6 +727,7 @@
 
                 <CheckBox
                     android:id="@+id/checkbox26"
+                    android:buttonTint="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -763,7 +784,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/neodgm"
-                    android:text="계산" />
+                    android:background="@drawable/total"/>
             </LinearLayout>
         </LinearLayout>
 

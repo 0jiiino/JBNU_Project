@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="75dp"
+    android:layout_gravity="center|top"
+    android:layout_marginTop="5dp"
     android:layout_marginBottom="3dp"
-    android:background="@drawable/border2">
+    android:background="@drawable/shadow"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/item_post_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textSize="24sp"
-        android:textColor="#000000"
+        android:fontFamily="@font/neodgm"
+        android:gravity="center"
+        android:textSize="20sp"
         android:textStyle="bold"
-        tools:text="title"/>
+        tools:text="title" />
+
     <TextView
         android:id="@+id/item_post_contents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#0071FA"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/neodgm"
+        android:gravity="center"
+        android:textColor="#2B2B2B"
         android:textSize="16sp"
-        tools:text="contents"/>
-    <TextView
-        android:id="@+id/item_post_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#0071FA"
-        android:textSize="16sp"
-        tools:text="contents"/>
+        tools:text="contents" />
 
 </LinearLayout>

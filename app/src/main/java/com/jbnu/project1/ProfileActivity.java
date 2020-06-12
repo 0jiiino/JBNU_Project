@@ -66,7 +66,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (view == buttonLogout) {
             firebaseAuth.signOut();
             finish();
-            startActivity(new Intent(this, Firelogin.class));
+            startActivity(new Intent(this, MainActivity.class));
         }
         //회원탈퇴를 클릭하면 회원정보를 삭제한다. 삭제전에 컨펌창을 하나 띄워야 겠다.
         if(view == textivewDelete) {

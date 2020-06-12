@@ -51,6 +51,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         private TextView title;
         private TextView contents;
 
+
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
 

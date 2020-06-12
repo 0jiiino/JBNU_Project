@@ -9,13 +9,16 @@
 
     <LinearLayout
         android:id="@+id/ll10"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
-        android:background="#C5E6DDF8"
+        android:layout_marginTop="15dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/shadow"
         android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,27 +26,27 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="40dp"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/love" />
 
         <Button
             android:id="@+id/belt"
-            android:layout_width="290dp"
+            android:layout_width="wrap_content"
             android:layout_height="76dp"
             android:layout_gravity="center"
-            android:gravity="center"
             android:background="#00FFFFFF"
             android:fontFamily="@font/neodgm"
+            android:gravity="center"
             android:shadowColor="#00FFFFFF"
             android:text="WHITE BELT(1학년)"
-            android:textColor="#009260"
+            android:textColor="#000705"
             android:textSize="30dp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="40dp"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/love" />
     </LinearLayout>

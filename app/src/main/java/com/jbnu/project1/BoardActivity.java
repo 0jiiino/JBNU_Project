@@ -9,31 +9,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
+
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.ServerTimestamp;
-import com.google.type.Date;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static android.content.ContentValues.TAG;
-import static com.google.firebase.firestore.FieldValue.delete;
 
 public class BoardActivity extends AppCompatActivity implements View.OnClickListener, RecyclerViewItemClickListener.OnItemClickListener {
 
@@ -86,10 +78,11 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                                 mDatas.clear();
                                 for(DocumentSnapshot snap:  queryDocumentSnapshots.getDocuments()){
                                     Map<String,Object> shot = snap.getData();
+                                    String email = String.valueOf(shot.get(PostID.email));
                                     String documentId = String.valueOf(shot.get(PostID.documentId));
                                     String title = String.valueOf(shot.get(PostID.title));
                                     String contents = String.valueOf(shot.get(PostID.contents));
-                                    Post data = new Post(documentId,title,contents);
+                                    Post data = new Post(email,documentId,title,contents);
                                     mDatas.add(data);
                                 }
                                 mAdapter = new PostAdapter(mDatas);
@@ -114,21 +107,24 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onItemLongClikck(View view, final int position) {
-        /*AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setMessage("삭제하시겠습니까");
         dialog.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 mStore.collection(PostID.post).document(mDatas.get(position).getDocumentId()).delete();
-                Toast.makeText(BoardActivity.this,"삭제되었습니다",Toast.LENGTH_SHORT).show();
+                Toast.makeText(BoardActivity.this, "삭제되었습니다", Toast.LENGTH_SHORT).show();
             }
         }).setNegativeButton("취소", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(BoardActivity.this,"취소",Toast.LENGTH_SHORT).show();
+                Toast.makeText(BoardActivity.this, "취소", Toast.LENGTH_SHORT).show();
             }
         });
         dialog.setTitle("삭제 알림");
-        dialog.show();*/
+        dialog.show();
+
     }
+
 }

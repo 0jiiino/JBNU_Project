@@ -22,7 +22,7 @@ import java.util.Map;
 public class Post2Activity extends AppCompatActivity {
 
     private FirebaseFirestore mstore = FirebaseFirestore.getInstance();
-    private TextView mtitletext,mcontenttext,mdate;
+    private TextView mtitletext,mcontenttext,memail;
     private String id;
 
 
@@ -34,7 +34,7 @@ public class Post2Activity extends AppCompatActivity {
 
         mtitletext = findViewById(R.id.post2_title);
         mcontenttext = findViewById(R.id.post2_content);
-        mdate = findViewById(R.id.post2_date);
+        memail = findViewById(R.id.post2_email);
 
         Intent getIntent = getIntent();
         id = getIntent.getStringExtra(PostID.documentId);
@@ -67,9 +67,11 @@ public class Post2Activity extends AppCompatActivity {
                                     Map<String, Object> snap = task.getResult().getData();
                                     String title = String.valueOf(snap.get(PostID.title));
                                     String content = String.valueOf(snap.get(PostID.contents));
+                                    String email = String.valueOf(snap.get(PostID.email));
 
                                     mtitletext.setText(title);
                                     mcontenttext.setText(content);
+                                    memail.setText("작성자:"+email);
 
                                 }
                              }else {

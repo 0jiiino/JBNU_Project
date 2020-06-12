@@ -32,7 +32,6 @@ public class BookList extends AppCompatActivity {
     private static String TAG = "project1_BookList";
 
     private static final String TAG_JSON="webnautes";
-    private static final String TAG_CATEGORY = "bkcategory";
     private static final String TAG_NAME = "bkname";
     private static final String TAG_WRITER ="bkwriter";
     private static final String TAG_COMPANY ="bkcompany";
@@ -134,18 +133,16 @@ public class BookList extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(mJsonString);
             JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
 
-            for(int i=0;i<jsonArray.length();i++){
+            for(int i=0;i<jsonArray.length()-1;i++){
 
                 JSONObject item = jsonArray.getJSONObject(i);
 
-                String category = item.getString(TAG_CATEGORY);
                 String name = item.getString(TAG_NAME);
                 String writer = item.getString(TAG_WRITER);
                 String company = item.getString(TAG_COMPANY);
 
                 HashMap<String,String> hashMap = new HashMap<>();
 
-                hashMap.put(TAG_CATEGORY, category);
                 hashMap.put(TAG_NAME, name);
                 hashMap.put(TAG_WRITER, writer);
                 hashMap.put(TAG_COMPANY, company);
@@ -155,8 +152,8 @@ public class BookList extends AppCompatActivity {
 
             ListAdapter adapter = new SimpleAdapter(
                     BookList.this, mArrayList, R.layout.view_book,
-                    new String[]{TAG_CATEGORY,TAG_NAME, TAG_WRITER,TAG_COMPANY},
-                    new int[]{R.id.textView1, R.id.textView2, R.id.textView3,R.id.textView4}
+                    new String[]{TAG_NAME, TAG_WRITER,TAG_COMPANY},
+                    new int[]{R.id.textView2, R.id.textView3,R.id.textView4}
             );
 
             mlistView.setAdapter(adapter);
