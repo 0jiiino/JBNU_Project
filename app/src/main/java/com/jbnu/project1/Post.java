@@ -12,11 +12,7 @@ public class Post {
     @ServerTimestamp
     private Date date;
 
-    public Post(){
-
-    }
-
-    public Post(String documentId, String title, String contents) {
+    public Post( String documentId, String title, String contents) {
         this.documentId = documentId;
         this.title = title;
         this.contents = contents;
@@ -46,8 +42,9 @@ public class Post {
         this.contents = contents;
     }
 
-    public Date getDate(){
-        return date;
+
+    public String getDate(){
+        return String.valueOf(date);
     }
     public void setDate(Date date){
         this.date = date;

@@ -36,7 +36,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         if(mAuth.getCurrentUser() != null){
             String postId=mStore.collection(PostID.post).document().getId();
             Map<String,Object> data = new HashMap<>();
-            data.put(PostID.documentId,mAuth.getCurrentUser().getUid());
+            data.put(PostID.documentId,postId);
             data.put(PostID.title,mTitle.getText().toString());
             data.put(PostID.contents,mContents.getText().toString());
             data.put(PostID.timestamp, FieldValue.serverTimestamp());

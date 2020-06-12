@@ -42,7 +42,7 @@ public class Firesign extends AppCompatActivity implements View.OnClickListener 
             //이미 로그인 되었다면 이 액티비티를 종료함
             finish();
             //그리고 profile 액티비티를 연다.
-            startActivity(new Intent(getApplicationContext(), ProfileActivity.class)); //추가해 줄 ProfileActivity
+            startActivity(new Intent(getApplicationContext(), BoardActivity.class)); //추가해 줄 ProfileActivity
         }
         //initializing views
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
@@ -72,6 +72,7 @@ public class Firesign extends AppCompatActivity implements View.OnClickListener 
             return;
         }
 
+
         //email과 password가 제대로 입력되어 있다면 계속 진행된다.
         progressDialog.setMessage("등록중입니다. 기다려 주세요...");
         progressDialog.show();
@@ -83,7 +84,7 @@ public class Firesign extends AppCompatActivity implements View.OnClickListener 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             finish();
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            startActivity(new Intent(getApplicationContext(), BoardActivity.class));
                         } else {
                             //에러발생시
                             textviewMessage.setText("에러유형\n - 이미 등록된 이메일  \n -암호 최소 6자리 이상 \n - 이메일 형식확인");
