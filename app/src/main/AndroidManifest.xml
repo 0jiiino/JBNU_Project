@@ -10,31 +10,43 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Post2Activity"></activity>
+
+        <activity
+            android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".Post2Activity"/>
         <activity android:name=".PostActivity" />
         <activity android:name=".BoardActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".FindActivity" />
-        <activity android:name=".Firelogin" />
-        <activity android:name=".Firesign" />
-        <activity android:name=".Splash" />
+        <activity android:name=".Firelogin" android:windowSoftInputMode="adjustResize"
+            android:noHistory="true"></activity>
+        <activity android:name=".Firesign" android:windowSoftInputMode="adjustResize"
+            android:noHistory="true"></activity>
         <activity android:name=".pointlist" />
         <activity android:name=".language" />
         <activity android:name=".notice" />
-        <activity android:name=".SearchBook" />
+        <activity android:name=".SearchBook" android:windowSoftInputMode="adjustNothing"/>
         <activity android:name=".BookList" />
         <activity android:name=".RedBelt" />
         <activity android:name=".BlueBelt" />
         <activity android:name=".YellowBelt" />
         <activity android:name=".WhiteBelt" />
         <activity android:name=".BeltActivity" />
+        <activity android:name=".MainActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -42,15 +54,10 @@
 
         <activity
             android:name=".Map"
-            android:label="교내 편의 시설 위치 정보" />
-            <activity android:name=".MainActivity">
+            android:label="교내 편의 시설 위치 정보" >
+        </activity>
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            </activity>
     </application>
 
 </manifest>

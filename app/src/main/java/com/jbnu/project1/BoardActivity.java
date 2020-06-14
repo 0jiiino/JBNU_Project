@@ -37,6 +37,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
     private List<Post> mDatas;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,23 +109,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onItemLongClikck(View view, final int position) {
 
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setMessage("삭제하시겠습니까");
-        dialog.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                mStore.collection(PostID.post).document(mDatas.get(position).getDocumentId()).delete();
-                Toast.makeText(BoardActivity.this, "삭제되었습니다", Toast.LENGTH_SHORT).show();
-            }
-        }).setNegativeButton("취소", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(BoardActivity.this, "취소", Toast.LENGTH_SHORT).show();
-            }
-        });
-        dialog.setTitle("삭제 알림");
-        dialog.show();
-
     }
+
 
 }

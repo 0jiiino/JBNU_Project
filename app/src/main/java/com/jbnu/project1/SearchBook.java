@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -53,6 +56,7 @@ public class SearchBook extends AppCompatActivity {
 
         mListViewList = (ListView) findViewById(R.id.listView_main_list);
         mEditTextSearchKeyword1 = (EditText) findViewById(R.id.editText_main_searchKeyword1);
+        String book = mEditTextSearchKeyword1.getText().toString().trim();
 
 
         Button button_search = (Button) findViewById(R.id.button_main_search);
@@ -66,6 +70,7 @@ public class SearchBook extends AppCompatActivity {
                 task.execute( mEditTextSearchKeyword1.getText().toString());
             }
         });
+
 
 
         mArrayList = new ArrayList<>();

@@ -54,7 +54,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
 
         //textViewUserEmail의 내용을 변경해 준다.
-        textViewUserEmail.setText("반갑습니다.\n"+ user.getEmail()+"으로 로그인 하였습니다.");
+        textViewUserEmail.setText(user.getEmail()+"으로 로그인 중입니다.");
 
         //logout button event
         buttonLogout.setOnClickListener(this);
@@ -71,7 +71,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //회원탈퇴를 클릭하면 회원정보를 삭제한다. 삭제전에 컨펌창을 하나 띄워야 겠다.
         if(view == textivewDelete) {
             AlertDialog.Builder alert_confirm = new AlertDialog.Builder(ProfileActivity.this);
-            alert_confirm.setMessage("정말 계정을 삭제 할까요?").setCancelable(false).setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            alert_confirm.setMessage("탈퇴하시겠습니까?").setCancelable(false).setPositiveButton("확인", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -79,7 +79,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-                                            Toast.makeText(ProfileActivity.this, "계정이 삭제 되었습니다.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(ProfileActivity.this, "탈퇴 처리 되었습니다.", Toast.LENGTH_LONG).show();
                                             finish();
                                             startActivity(new Intent(getApplicationContext(), Firesign.class));
                                         }

@@ -3,6 +3,7 @@ package com.jbnu.project1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,10 +31,13 @@ public class Firesign extends AppCompatActivity implements View.OnClickListener 
     //define firebase object
     FirebaseAuth firebaseAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firesign);
+
+
 
         //initializig firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -109,5 +113,7 @@ public class Firesign extends AppCompatActivity implements View.OnClickListener 
             startActivity(new Intent(this,Firelogin.class)); //추가해 줄 로그인 액티비티
         }
     }
+
+
 }
 

@@ -4,44 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6A855ECA"
     tools:context=".ProfileActivity">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <ImageView
-            android:src="@mipmap/ic_launcher"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#D2FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/textviewUserEmail"
-            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            />
 
         <Button
             android:id="@+id/buttonLogout"
-            android:text="로그아웃"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/neodgm"
+            android:background="#6A855ECA"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="로그아웃" />
 
         <TextView
-            android:text="회원탈퇴 합니다."
+            android:layout_marginBottom="20dp"
             android:id="@+id/textviewDelete"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/colorAccent"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/neodgm"
+            android:text="회원탈퇴"
+            android:textColor="#C1DA0360" />
     </LinearLayout>
 
 </RelativeLayout>

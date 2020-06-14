@@ -89,21 +89,20 @@
 
     <Button
         android:id="@+id/profile"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginEnd="222dp"
-        android:layout_marginRight="222dp"
-        android:layout_marginBottom="15dp"
-        android:layout_toStartOf="@+id/main_post_edit"
-        android:layout_toLeftOf="@+id/main_post_edit"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/btnshadow"
         android:fontFamily="@font/neodgm"
         android:text="프로필"
-        android:textColor="#ffffff"
-        android:layout_alignParentLeft="true" />
+        android:textColor="#ffffff" />
 
 </RelativeLayout>

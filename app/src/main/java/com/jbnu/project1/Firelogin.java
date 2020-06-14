@@ -85,7 +85,7 @@ public class Firelogin extends AppCompatActivity implements View.OnClickListener
                         progressDialog.dismiss();
                         if(task.isSuccessful()) {
                             finish();
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            startActivity(new Intent(getApplicationContext(), BoardActivity.class));
                         } else {
                             Toast.makeText(getApplicationContext(), "로그인 실패!", Toast.LENGTH_LONG).show();
                         }
@@ -109,4 +109,5 @@ public class Firelogin extends AppCompatActivity implements View.OnClickListener
             startActivity(new Intent(this, FindActivity.class));
         }
     }
+
 }

@@ -1,77 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6A855ECA"
     tools:context=".Firelogin">
 
-    <TextView
-        android:layout_gravity="center_horizontal"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="23dp"
-        android:textColor="@color/colorAccent"
-        android:text="로그인" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_gravity="center_horizontal"
-        android:hint="***@***.com"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="250dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Enter password"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/buttonSignup"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:layout_gravity="center_horizontal"
-        android:text="로그인" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:background="#D0FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:text="신규 회원가입"
-            android:id="@+id/textViewSignin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/neodgm"
+            android:text="로그인"
+            android:textColor="#B46F03DA"
+            android:textSize="23dp" />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/editTextEmail"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/neodgm"
+            android:hint="***@***.com"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/neodgm"
+            android:hint="Enter password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/buttonSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:textStyle="bold"
+            android:background="#6A855ECA"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/neodgm"
+            android:text="로그인" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewSignin"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/neodgm"
+                android:text="신규 회원가입" />
+
+            <TextView
+                android:id="@+id/textViewFindpassword"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:fontFamily="@font/neodgm"
+                android:text="비밀번호 찾기"
+                android:textColor="#B46F03DA" />
+
+        </LinearLayout>
+
 
         <TextView
-            android:text="패스워드가 기억나지 않습니까?"
-            android:textColor="@color/colorAccent"
-            android:layout_marginLeft="16dp"
-            android:id="@+id/textViewFindpassword"
+            android:id="@+id/textviewMessage"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/neodgm"
+            android:textColor="#C1DA0360" />
 
     </LinearLayout>
 
-
-    <TextView
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/colorAccent"
-        android:id="@+id/textviewMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
